@@ -530,8 +530,8 @@
 
         <!-- View NABL Certificate Button -->
         <div style="text-align: center; margin-top: 2.5rem;">
-          <button onclick="openCertModal()" class="btn-gold" style="padding: 0.85rem 2rem; font-size: 0.9rem;">
-            📄 View NABL Lab Purity Test Certificate
+          <button onclick="openCertModal()" class="btn-gold" style="padding: 0.85rem 2.25rem; font-size: 0.9rem;">
+            📄 View NABL Lab Purity Test Certificate & Report
           </button>
         </div>
 
@@ -1157,40 +1157,44 @@
 
   <!-- NABL Certificate Modal -->
   <div id="cert-modal-overlay" class="modal-overlay">
-    <div class="modal-content" style="max-width: 620px;">
+    <div class="modal-content" style="max-width: 780px; width: 92%;">
       <button onclick="closeCertModal()"
-        style="position: absolute; top: 1rem; right: 1rem; background: rgba(255,255,255,0.08); border: none; width: 36px; height: 36px; border-radius: 50%; color: var(--color-cream); font-size: 1.2rem; cursor: pointer;">✕</button>
+        style="position: absolute; top: 1rem; right: 1rem; background: rgba(255,255,255,0.08); border: none; width: 36px; height: 36px; border-radius: 50%; color: var(--color-cream); font-size: 1.2rem; cursor: pointer; z-index: 10;">✕</button>
 
-      <div style="text-align: center; margin-bottom: 1.5rem;">
+      <div style="text-align: center; margin-bottom: 1.25rem;">
         <span class="eyebrow">Government Accredited Verification</span>
         <h3 class="font-display" style="font-size: 1.5rem; color: var(--color-cream); margin-top: 0.25rem;">NABL Lab
-          Purity Test Certificate</h3>
+          Purity Test Report</h3>
         <p style="font-size: 0.825rem; color: var(--color-gold); margin-top: 0.25rem;">Batch Ref: BRJ-A2G-2026-08 ·
           Gaschromatography (GC-MS) Verified</p>
       </div>
 
+      <!-- High-Res Certificate Image (Instant Loading, Zero IDM / Chrome Viewer Errors) -->
       <div
-        style="background: rgba(4,13,8,0.8); border: 1px solid var(--color-gold); border-radius: 1rem; padding: 1.25rem; margin-bottom: 1.5rem;">
+        style="width: 100%; max-height: 480px; overflow-y: auto; border-radius: 0.75rem; border: 1.5px solid var(--color-gold); margin-bottom: 1.25rem; background: #ffffff; text-align: center; padding: 0.5rem; box-shadow: inset 0 0 10px rgba(0,0,0,0.1);">
+        <img src="image/report_page_1.png"
+          alt="Shree Ram Agro Food Laboratory Official Brij Bhumi Ghee Purity Test Report"
+          style="width: 100%; height: auto; display: block; border-radius: 0.35rem;" />
+      </div>
+
+      <div
+        style="background: rgba(4,13,8,0.8); border: 1px solid rgba(188,148,76,0.3); border-radius: 0.75rem; padding: 1rem; margin-bottom: 1.25rem;">
         <div
-          style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(188,148,76,0.2); padding-bottom: 0.65rem; margin-bottom: 0.65rem; font-size: 0.85rem;">
+          style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(188,148,76,0.2); padding-bottom: 0.4rem; margin-bottom: 0.4rem; font-size: 0.82rem;">
           <span style="color: var(--color-cream-muted);">Test Parameter</span>
           <span style="color: var(--color-gold-light); font-weight: 600;">Result Status</span>
         </div>
-        <div style="display: flex; justify-content: space-between; padding: 0.4rem 0; font-size: 0.85rem;">
+        <div style="display: flex; justify-content: space-between; padding: 0.25rem 0; font-size: 0.82rem;">
           <span>Milk Fat Purity</span>
           <span style="color: #4ade80; font-weight: 600;">99.85% Pure Dairy Fat (PASS)</span>
         </div>
-        <div style="display: flex; justify-content: space-between; padding: 0.4rem 0; font-size: 0.85rem;">
+        <div style="display: flex; justify-content: space-between; padding: 0.25rem 0; font-size: 0.82rem;">
           <span>Mineral Oil / Palm Oil</span>
           <span style="color: #4ade80; font-weight: 600;">0.00% Not Detected (PASS)</span>
         </div>
-        <div style="display: flex; justify-content: space-between; padding: 0.4rem 0; font-size: 0.85rem;">
+        <div style="display: flex; justify-content: space-between; padding: 0.25rem 0; font-size: 0.82rem;">
           <span>Chemical Solvents / Aromas</span>
           <span style="color: #4ade80; font-weight: 600;">0.00% Not Detected (PASS)</span>
-        </div>
-        <div style="display: flex; justify-content: space-between; padding: 0.4rem 0; font-size: 0.85rem;">
-          <span>A2 Beta-Casein Protein</span>
-          <span style="color: #4ade80; font-weight: 600;">100% Authentic A2 Protein</span>
         </div>
       </div>
 

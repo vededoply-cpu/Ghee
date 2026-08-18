@@ -1955,234 +1955,6 @@ header.sticky-header.scrolled {
     height: 160px;
   }
 
-  /* ==========================================================================
-   HERO TRUST BADGES
-   ========================================================================== */
-
-  .hero-trust-row {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-top: 1.25rem;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(188, 148, 76, 0.15);
-  }
-
-  .hero-trust-item {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    font-size: 0.78rem;
-    color: var(--color-gold-soft);
-    font-weight: 500;
-    background: rgba(188, 148, 76, 0.08);
-    padding: 0.3rem 0.65rem;
-    border-radius: 9999px;
-    border: 1px solid rgba(188, 148, 76, 0.2);
-  }
-
-  @media (max-width: 991px) {
-    .hero-trust-row {
-      justify-content: center;
-    }
-  }
-
-
-  /* ==========================================================================
-   STICKY MOBILE ORDER BAR (MOBILE ONLY)
-   ========================================================================== */
-
-  .sticky-mobile-order-bar {
-    display: none;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 99;
-    background: rgba(7, 22, 13, 0.95);
-    backdrop-filter: blur(16px);
-    border-top: 1.5px solid var(--color-gold);
-    padding: 0.65rem 1rem;
-    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.7);
-  }
-
-  .sticky-mobile-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 600px;
-    margin: 0 auto;
-    gap: 0.75rem;
-  }
-
-  .sticky-mobile-text {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .sticky-mobile-title {
-    font-family: var(--font-heading);
-    font-size: 0.85rem;
-    color: var(--color-cream);
-    font-weight: 600;
-    line-height: 1.2;
-  }
-
-  .sticky-mobile-sub {
-    font-size: 0.72rem;
-    color: var(--color-gold-light);
-    font-weight: 600;
-  }
-
-  .sticky-mobile-btn {
-    background: linear-gradient(135deg, #d4af66 0%, #bc944c 100%);
-    color: #07160d;
-    font-weight: 700;
-    font-size: 0.8rem;
-    padding: 0.6rem 1.15rem;
-    border-radius: 9999px;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    white-space: nowrap;
-    box-shadow: 0 4px 15px rgba(188, 148, 76, 0.4);
-  }
-
-  @media (max-width: 768px) {
-    .sticky-mobile-order-bar {
-      display: block;
-    }
-
-    body {
-      padding-bottom: 60px;
-      /* Space for sticky bar */
-    }
-  }
-
-
-  /* ==========================================================================
-   LIVE SOCIAL PROOF TOAST NOTIFICATION
-   ========================================================================== */
-
-  .social-proof-toast {
-    position: fixed;
-    bottom: 80px;
-    left: 20px;
-    z-index: 95;
-    background: rgba(8, 26, 16, 0.95);
-    border: 1px solid var(--color-gold);
-    border-radius: 1rem;
-    padding: 0.75rem 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(12px);
-    max-width: 320px;
-    transform: translateY(120px);
-    opacity: 0;
-    visibility: hidden;
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease, visibility 0.5s ease;
-  }
-
-  .social-proof-toast.active {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .social-proof-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: rgba(188, 148, 76, 0.2);
-    color: var(--color-gold);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.1rem;
-    flex-shrink: 0;
-  }
-
-  .social-proof-content {
-    font-size: 0.78rem;
-    color: var(--color-cream-muted);
-    line-height: 1.35;
-  }
-
-  .social-proof-content strong {
-    color: var(--color-cream);
-    display: block;
-    font-size: 0.82rem;
-  }
-
-  .social-proof-time {
-    font-size: 0.7rem;
-    color: var(--color-gold);
-    display: block;
-    margin-top: 0.15rem;
-  }
-
-  .social-proof-close {
-    background: none;
-    border: none;
-    color: var(--color-cream-muted);
-    font-size: 0.9rem;
-    cursor: pointer;
-    padding: 0.2rem;
-    line-height: 1;
-  }
-
-  @media (max-width: 768px) {
-    .social-proof-toast {
-      left: 12px;
-      bottom: 75px;
-      max-width: 290px;
-      padding: 0.6rem 0.85rem;
-    }
-  }
-
-
-  /* ==========================================================================
-   INTERACTIVE GHEE USAGE CALCULATOR
-   ========================================================================== */
-
-  .calc-box {
-    background: linear-gradient(180deg, rgba(13, 39, 25, 0.8) 0%, rgba(7, 22, 13, 0.95) 100%);
-    border: 1px solid var(--color-gold);
-    border-radius: 1.5rem;
-    padding: 2.25rem;
-    max-width: 800px;
-    margin: 3rem auto 0 auto;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  }
-
-  .calc-option-btn {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--color-green-border);
-    color: var(--color-cream);
-    padding: 0.75rem 1.25rem;
-    border-radius: 0.75rem;
-    cursor: pointer;
-    font-family: var(--font-body);
-    font-size: 0.88rem;
-    transition: var(--transition-smooth);
-    flex: 1;
-    min-width: 140px;
-    text-align: center;
-  }
-
-  .calc-option-btn:hover,
-  .calc-option-btn.active {
-    background: var(--color-gold);
-    color: #07160d;
-    font-weight: 600;
-    border-color: var(--color-gold);
-    box-shadow: 0 4px 15px rgba(188, 148, 76, 0.3);
-  }
-
   .slider-dots {
     bottom: 0.85rem;
     gap: 0.4rem;
@@ -2196,115 +1968,254 @@ header.sticky-header.scrolled {
   .slider-dot.active {
     width: 20px;
   }
+}
 
+/* ==========================================================================
+   HERO TRUST BADGES
+   ========================================================================== */
+
+.hero-trust-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(188, 148, 76, 0.15);
+}
+
+.hero-trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  color: var(--color-gold-soft);
+  font-weight: 500;
+  background: rgba(188, 148, 76, 0.08);
+  padding: 0.3rem 0.65rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(188, 148, 76, 0.2);
+}
+
+@media (max-width: 991px) {
+  .hero-trust-row {
+    justify-content: center;
+  }
 }
 
 
-.hero-img {
-  max-height: 240px;
+/* ==========================================================================
+   STICKY MOBILE ORDER BAR (MOBILE ONLY)
+   ========================================================================== */
+
+.sticky-mobile-order-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  background: rgba(7, 22, 13, 0.95);
+  backdrop-filter: blur(16px);
+  border-top: 1.5px solid var(--color-gold);
+  padding: 0.65rem 1rem;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.7);
+}
+
+.sticky-mobile-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 600px;
+  margin: 0 auto;
+  gap: 0.75rem;
+}
+
+.sticky-mobile-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.sticky-mobile-title {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  color: var(--color-cream);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.sticky-mobile-sub {
+  font-size: 0.72rem;
+  color: var(--color-gold-light);
+  font-weight: 600;
+}
+
+.sticky-mobile-btn {
+  background: linear-gradient(135deg, #d4af66 0%, #bc944c 100%);
+  color: #07160d;
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 0.6rem 1.15rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(188, 148, 76, 0.4);
+}
+
+@media (max-width: 768px) {
+  .sticky-mobile-order-bar {
+    display: block;
+  }
+
+  body {
+    padding-bottom: 60px;
+  }
 }
 
 
-.hero-img-backdrop {
-  width: 210px;
-  height: 210px;
+/* ==========================================================================
+   LIVE SOCIAL PROOF TOAST NOTIFICATION
+   ========================================================================== */
+
+.social-proof-toast {
+  position: fixed;
+  bottom: 80px;
+  left: 20px;
+  z-index: 95;
+  background: rgba(8, 26, 16, 0.95);
+  border: 1px solid var(--color-gold);
+  border-radius: 1rem;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  max-width: 320px;
+  transform: translateY(120px);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.social-proof-toast.active {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.social-proof-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(188, 148, 76, 0.2);
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.social-proof-content {
+  font-size: 0.78rem;
+  color: var(--color-cream-muted);
+  line-height: 1.35;
+}
+
+.social-proof-content strong {
+  color: var(--color-cream);
+  display: block;
+  font-size: 0.82rem;
+}
+
+.social-proof-time {
+  font-size: 0.7rem;
+  color: var(--color-gold);
+  display: block;
+  margin-top: 0.15rem;
+}
+
+.social-proof-close {
+  background: none;
+  border: none;
+  color: var(--color-cream-muted);
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0.2rem;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .social-proof-toast {
+    left: 12px;
+    bottom: 75px;
+    max-width: 290px;
+    padding: 0.6rem 0.85rem;
+  }
 }
 
 
-.slider-dots {
-  gap: 0.5rem;
+/* ==========================================================================
+   INTERACTIVE GHEE USAGE CALCULATOR
+   ========================================================================== */
+
+.calc-box {
+  background: linear-gradient(180deg, rgba(13, 39, 25, 0.8) 0%, rgba(7, 22, 13, 0.95) 100%);
+  border: 1px solid var(--color-gold);
+  border-radius: 1.5rem;
+  padding: 2.25rem;
+  max-width: 800px;
+  margin: 3rem auto 0 auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-
-.slider-dot {
-  width: 8px;
-  height: 8px;
+.calc-option-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-green-border);
+  color: var(--color-cream);
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  transition: var(--transition-smooth);
+  flex: 1;
+  min-width: 140px;
+  text-align: center;
 }
 
-
-.slider-dot.active {
-  width: 24px;
+.calc-option-btn:hover,
+.calc-option-btn.active {
+  background: var(--color-gold);
+  color: #07160d;
+  font-weight: 600;
+  border-color: var(--color-gold);
+  box-shadow: 0 4px 15px rgba(188, 148, 76, 0.3);
 }
-
-}
-
 
 /* ==========================================================================
    REDUCED MOTION
    ========================================================================== */
 
 @media (prefers-reduced-motion: reduce) {
-
   html {
     scroll-behavior: auto;
   }
-
 
   .hero-slide {
     transition: opacity 0.3s ease;
     transform: none !important;
   }
 
-
   .hero-img {
     animation: none;
   }
 
-
   * {
     transition-duration: 0.01ms !important;
-  }
-
-}
-
-.family-size-selector {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 14px;
-  margin: 30px auto 35px;
-  flex-wrap: wrap;
-}
-
-.family-size-selector button {
-  padding: 13px 24px;
-  border: 1px solid rgba(210, 166, 76, 0.55);
-  border-radius: 30px;
-  background: rgba(10, 35, 23, 0.9);
-  color: #f3e6c5;
-  font-size: 14px;
-  font-weight: 500;
-  font-family: inherit;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-/* Hover */
-.family-size-selector button:hover {
-  background: linear-gradient(135deg, #c99a42, #e6c16d);
-  color: #102217;
-  border-color: #e6c16d;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(201, 154, 66, 0.25);
-}
-
-/* Selected / Active */
-.family-size-selector button.active {
-  background: linear-gradient(135deg, #c99a42, #e6c16d);
-  color: #102217;
-  border-color: #e6c16d;
-  box-shadow: 0 8px 25px rgba(201, 154, 66, 0.3);
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  .family-size-selector {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .family-size-selector button {
-    width: 100%;
-    max-width: 320px;
   }
 }
