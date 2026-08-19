@@ -86,6 +86,7 @@
     <div id="mobile-menu" class="mobile-menu-drawer">
       <a href="#home" onclick="toggleMobileMenu()" class="mobile-nav-link">Home</a>
       <a href="#products" onclick="toggleMobileMenu()" class="mobile-nav-link">Ghee Products</a>
+      <a href="testimonials.html" onclick="toggleMobileMenu()" class="mobile-nav-link">Testimonials</a>
       <a href="#why" onclick="toggleMobileMenu()" class="mobile-nav-link">Why Brajbhumi</a>
       <a href="#manufacturing" onclick="toggleMobileMenu()" class="mobile-nav-link">Bilona Process</a>
       <a href="#about" onclick="toggleMobileMenu()" class="mobile-nav-link">About Us</a>
@@ -107,7 +108,7 @@
             <h1 class="hero-title font-display">
               Desi Cow A2 Ghee <span class="text-shimmer">(500g Glass Jar)</span>
             </h1>
-            <p style="font-size: 1.05rem; color: var(--color-cream-muted); margin-bottom: 2rem; max-width: 480px;">
+            <p class="hero-desc">
               Hand-churned from fresh cow butter using traditional bilona method. Rich golden aroma and natural granular
               texture.
             </p>
@@ -138,7 +139,7 @@
             <h1 class="hero-title font-display">
               Pure Desi Cow Ghee <span class="text-shimmer">(1 Liter Jar)</span>
             </h1>
-            <p style="font-size: 1.05rem; color: var(--color-cream-muted); margin-bottom: 2rem; max-width: 480px;">
+            <p class="hero-desc">
               Golden, granular premium A2 cow ghee in a 1 Liter glass jar pack, delivered direct from farm kitchens.
             </p>
             <div class="hero-actions">
@@ -169,7 +170,7 @@
             <h1 class="hero-title font-display">
               Desi Cow A2 Ghee <span class="text-shimmer">(5L Steel Dolchi)</span>
             </h1>
-            <p style="font-size: 1.05rem; color: var(--color-cream-muted); margin-bottom: 2rem; max-width: 480px;">
+            <p class="hero-desc">
               Pure A2 Bilona Cow Ghee in a heavy-duty traditional 5 Liter stainless steel dolchi container seal.
             </p>
             <div class="hero-actions">
@@ -185,7 +186,7 @@
           </div>
           <div class="hero-img-wrapper">
             <div class="hero-img-backdrop"
-              style="background: radial-gradient(circle, rgba(188,148,76,0.3) 0%, transparent 70%); width: 380px; height: 380px;">
+              style="background: radial-gradient(circle, rgba(188,148,76,0.3) 0%, transparent 70%);">
             </div>
             <img src="image/5kg.png?v=2" alt="Brajbhumi 5 Liter Steel Dolchi Ghee Container"
               class="hero-img hero-img-5l" />
@@ -623,6 +624,65 @@
       </div>
     </section>
 
+    <!-- Customer Feedback & Reviews Section -->
+    <section id="testimonials" style="padding: 5rem 0; background: rgba(4, 13, 8, 0.75); border-top: 1px solid var(--color-green-border); border-bottom: 1px solid var(--color-green-border);">
+      <div class="container-x">
+        <div style="text-align: center; margin-bottom: 3.5rem;">
+          <div style="display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+            <span class="gold-line"></span>
+            <span class="eyebrow">Customer Feedback</span>
+            <span class="gold-line" style="transform: rotate(180deg);"></span>
+          </div>
+          <h2 class="font-display" style="font-size: 2.5rem; color: var(--color-cream);">
+            Real Customer <span class="text-shimmer">Feedback</span>
+          </h2>
+          <p style="color: var(--color-cream-muted); font-size: 0.95rem; margin-top: 0.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Real WhatsApp feedback & reviews from happy families across India. Click on any review to view full resolution.
+          </p>
+        </div>
+
+        <div class="testimonial-grid">
+
+          <!-- Review 1 -->
+          <div class="testimonial-card" onclick="openLightbox(0)" aria-label="Open Testimonial 1">
+            <img src="image/review/1.jpg" alt="Brajbhumi Customer Feedback Review 1" class="testimonial-img" loading="lazy" />
+          </div>
+
+          <!-- Review 2 -->
+          <div class="testimonial-card" onclick="openLightbox(1)" aria-label="Open Testimonial 2">
+            <img src="image/review/2.jpg" alt="Brajbhumi Customer Feedback Review 2" class="testimonial-img" loading="lazy" />
+          </div>
+
+          <!-- Review 3 -->
+          <div class="testimonial-card" onclick="openLightbox(2)" aria-label="Open Testimonial 3">
+            <img src="image/review/3.jpg" alt="Brajbhumi Customer Feedback Review 3" class="testimonial-img" loading="lazy" />
+          </div>
+
+          <!-- Review 4 -->
+          <div class="testimonial-card" onclick="openLightbox(3)" aria-label="Open Testimonial 4">
+            <img src="image/review/4.jpg" alt="Brajbhumi Customer Feedback Review 4" class="testimonial-img" loading="lazy" />
+          </div>
+
+          <!-- Review 5 -->
+          <div class="testimonial-card" onclick="openLightbox(4)" aria-label="Open Testimonial 5">
+            <img src="image/review/5.jpg" alt="Brajbhumi Customer Feedback Review 5" class="testimonial-img" loading="lazy" />
+          </div>
+
+          <!-- Review 6 -->
+          <div class="testimonial-card" onclick="openLightbox(5)" aria-label="Open Testimonial 6">
+            <img src="image/review/6.jpg" alt="Brajbhumi Customer Feedback Review 6" class="testimonial-img" loading="lazy" />
+          </div>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="testimonials.html" class="btn-gold" style="padding: 0.75rem 2rem;">
+            View All Testimonials & Lightbox
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- About Section -->
     <section id="about" style="padding: 5rem 0;">
       <div class="container-x">
@@ -672,79 +732,6 @@
                 <span class="font-display" style="font-size: 1.75rem; color: var(--color-gold); display: block;">4.9
                   ★</span>
                 <span style="font-size: 0.75rem; color: var(--color-cream-muted);">Customer Rating</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" style="padding: 5rem 0; background: rgba(4,13,8,0.6);">
-      <div class="container-x">
-        <div style="text-align: center; margin-bottom: 3.5rem;">
-          <div
-            style="display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 0.5rem;">
-            <span class="gold-line"></span>
-            <span class="eyebrow">Customer Reviews</span>
-            <span class="gold-line" style="transform: rotate(180deg);"></span>
-          </div>
-          <h2 class="font-display" style="font-size: 2.5rem; color: var(--color-cream);">
-            Loved Across <span class="text-shimmer">India</span>
-          </h2>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.75rem;">
-          <div
-            style="background: rgba(13,39,25,0.5); border: 1px solid var(--color-green-border); border-radius: 1.25rem; padding: 2rem;">
-            <div style="color: var(--color-gold); margin-bottom: 1rem; font-size: 1.1rem;">★★★★★</div>
-            <p style="font-size: 0.95rem; color: var(--color-cream-muted); line-height: 1.6; margin-bottom: 1.5rem;">
-              "I have tried many branded ghees but Brajbhumi Ghee is the one my family keeps coming back to. The aroma
-              when it hits the hot tawa is incomparable!"
-            </p>
-            <div style="display: flex; align-items: center; gap: 0.75rem;">
-              <div
-                style="width: 36px; height: 36px; border-radius: 50%; background: rgba(188,148,76,0.2); color: var(--color-gold); display: flex; align-items: center; justify-content: center; font-weight: 700;">
-                ✦</div>
-              <div>
-                <h4 style="font-size: 0.9rem; color: var(--color-cream);">Ananya R.</h4>
-                <span style="font-size: 0.75rem; color: var(--color-cream-muted);">Bengaluru</span>
-              </div>
-            </div>
-          </div>
-
-          <div
-            style="background: rgba(13,39,25,0.5); border: 1px solid var(--color-green-border); border-radius: 1.25rem; padding: 2rem;">
-            <div style="color: var(--color-gold); margin-bottom: 1rem; font-size: 1.1rem;">★★★★★</div>
-            <p style="font-size: 0.95rem; color: var(--color-cream-muted); line-height: 1.6; margin-bottom: 1.5rem;">
-              "Pure granular texture, exactly how my grandmother used to make bilona ghee at home. Ordering on WhatsApp
-              was super seamless!"
-            </p>
-            <div style="display: flex; align-items: center; gap: 0.75rem;">
-              <div
-                style="width: 36px; height: 36px; border-radius: 50%; background: rgba(188,148,76,0.2); color: var(--color-gold); display: flex; align-items: center; justify-content: center; font-weight: 700;">
-                ✦</div>
-              <div>
-                <h4 style="font-size: 0.9rem; color: var(--color-cream);">Rajesh Kumar</h4>
-                <span style="font-size: 0.75rem; color: var(--color-cream-muted);">Chennai</span>
-              </div>
-            </div>
-          </div>
-
-          <div
-            style="background: rgba(13,39,25,0.5); border: 1px solid var(--color-green-border); border-radius: 1.25rem; padding: 2rem;">
-            <div style="color: var(--color-gold); margin-bottom: 1rem; font-size: 1.1rem;">★★★★★</div>
-            <p style="font-size: 0.95rem; color: var(--color-cream-muted); line-height: 1.6; margin-bottom: 1.5rem;">
-              "The A2 Desi Cow Ghee and 5kg bulk buffalo ghee are both exceptional quality. 100% recommended for
-              authentic flavor and health."
-            </p>
-            <div style="display: flex; align-items: center; gap: 0.75rem;">
-              <div
-                style="width: 36px; height: 36px; border-radius: 50%; background: rgba(188,148,76,0.2); color: var(--color-gold); display: flex; align-items: center; justify-content: center; font-weight: 700;">
-                ✦</div>
-              <div>
-                <h4 style="font-size: 0.9rem; color: var(--color-cream);">Srinivas Rao</h4>
-                <span style="font-size: 0.75rem; color: var(--color-cream-muted);">Hyderabad</span>
               </div>
             </div>
           </div>
@@ -1026,7 +1013,7 @@
             <li><a href="#why" style="color: var(--color-cream-muted); text-decoration: none;">Why Us</a></li>
             <li><a href="#certifications"
                 style="color: var(--color-cream-muted); text-decoration: none;">Certifications</a></li>
-            <li><a href="#testimonials" style="color: var(--color-cream-muted); text-decoration: none;">Customer
+            <li><a href="testimonials.html" style="color: var(--color-cream-muted); text-decoration: none;">Customer
                 Reviews</a></li>
           </ul>
         </div>
@@ -1234,8 +1221,109 @@
     </div>
   </div>
 
+  <!-- Fullscreen Image Lightbox Modal -->
+  <div id="testimonial-lightbox" class="lightbox-modal" onclick="handleLightboxBackdropClick(event)">
+    <div class="lightbox-container">
+      <div class="lightbox-header">
+        <span id="lightbox-counter" class="lightbox-counter">Review 1 of 6</span>
+        <button onclick="closeLightbox()" class="lightbox-close" aria-label="Close Lightbox">✕</button>
+      </div>
+
+      <div class="lightbox-img-wrapper">
+        <button onclick="prevLightbox(event)" class="lightbox-nav-btn lightbox-prev" aria-label="Previous Review">❮</button>
+        <img id="lightbox-img" src="" alt="Full Resolution Customer Testimonial" class="lightbox-img" />
+        <button onclick="nextLightbox(event)" class="lightbox-nav-btn lightbox-next" aria-label="Next Review">❯</button>
+      </div>
+
+      <div id="lightbox-caption" class="lightbox-caption">
+        Verified Customer Feedback Screenshot · Brajbhumi Pure A2 Desi Cow Ghee
+      </div>
+    </div>
+  </div>
+
   <!-- JavaScript Script -->
   <script src="app.js"></script>
+  <script>
+    // Testimonials Lightbox Functionality
+    const TESTIMONIAL_IMAGES = [
+      { src: 'image/review/1.jpg', alt: 'Customer Review 1', caption: 'Verified Customer Feedback #1 · 100% Pure A2 Desi Cow Ghee' },
+      { src: 'image/review/2.jpg', alt: 'Customer Review 2', caption: 'Verified Customer Feedback #2 · 100% Pure A2 Desi Cow Ghee' },
+      { src: 'image/review/3.jpg', alt: 'Customer Review 3', caption: 'Verified Customer Feedback #3 · 100% Pure A2 Desi Cow Ghee' },
+      { src: 'image/review/4.jpg', alt: 'Customer Review 4', caption: 'Verified Customer Feedback #4 · 100% Pure A2 Desi Cow Ghee' },
+      { src: 'image/review/5.jpg', alt: 'Customer Review 5', caption: 'Verified Customer Feedback #5 · 100% Pure A2 Desi Cow Ghee' },
+      { src: 'image/review/6.jpg', alt: 'Customer Review 6', caption: 'Verified Customer Feedback #6 · 100% Pure A2 Desi Cow Ghee' }
+    ];
+
+    let currentLightboxIndex = 0;
+
+    function openLightbox(index) {
+      currentLightboxIndex = index;
+      updateLightboxContent();
+      const modal = document.getElementById('testimonial-lightbox');
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('testimonial-lightbox');
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function prevLightbox(e) {
+      if (e) e.stopPropagation();
+      currentLightboxIndex = (currentLightboxIndex - 1 + TESTIMONIAL_IMAGES.length) % TESTIMONIAL_IMAGES.length;
+      updateLightboxContent();
+    }
+
+    function nextLightbox(e) {
+      if (e) e.stopPropagation();
+      currentLightboxIndex = (currentLightboxIndex + 1) % TESTIMONIAL_IMAGES.length;
+      updateLightboxContent();
+    }
+
+    function updateLightboxContent() {
+      const item = TESTIMONIAL_IMAGES[currentLightboxIndex];
+      const img = document.getElementById('lightbox-img');
+      const counter = document.getElementById('lightbox-counter');
+      const caption = document.getElementById('lightbox-caption');
+
+      if (img) {
+        img.src = item.src;
+        img.alt = item.alt;
+      }
+      if (counter) {
+        counter.innerText = `Review ${currentLightboxIndex + 1} of ${TESTIMONIAL_IMAGES.length}`;
+      }
+      if (caption) {
+        caption.innerText = item.caption;
+      }
+    }
+
+    function handleLightboxBackdropClick(e) {
+      if (e.target.id === 'testimonial-lightbox') {
+        closeLightbox();
+      }
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function (e) {
+      const modal = document.getElementById('testimonial-lightbox');
+      if (!modal || !modal.classList.contains('active')) return;
+
+      if (e.key === 'Escape') {
+        closeLightbox();
+      } else if (e.key === 'ArrowLeft') {
+        prevLightbox();
+      } else if (e.key === 'ArrowRight') {
+        nextLightbox();
+      }
+    });
+  </script>
 </body>
 
 </html>

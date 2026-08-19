@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Testimonials & Reviews · Brajbhumi Pure A2 Desi Cow Ghee</title>
+  <meta name="description"
+    content="Real customer feedback and verified reviews from families across India who enjoy Brajbhumi 100% Pure A2 Bilona Desi Cow Ghee." />
+  <meta name="keywords" content="brajbhumi ghee reviews, customer testimonials, A2 cow ghee feedback, bilona ghee reviews" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Customer Testimonials & Reviews · Brajbhumi Pure Ghee" />
+  <meta property="og:description"
+    content="Real feedback from our happy customers. 100% Pure A2 Desi Cow Bilona Ghee." />
+  <meta property="og:type" content="website" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- Ambient Background Glow Effects -->
+  <div class="bg-glow-top"></div>
+  <div class="bg-glow-bottom"></div>
+
+  <!-- Sticky Header Navigation -->
+  <header class="sticky-header">
+    <div class="container-x"
+      style="display: flex; align-items: center; justify-content: space-between; padding-top: 0.75rem; padding-bottom: 0.75rem;">
+      <a href="index.html#home" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none;">
+        <img src="image/logo.png?v=2" alt="Brajbhumi Logo"
+          style="height: 52px; width: auto; object-fit: contain; filter: drop-shadow(0 2px 10px rgba(188,148,76,0.35));" />
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="nav-links hidden-mobile">
+        <a href="index.html#home" class="nav-link">Home</a>
+        <a href="index.html#products" class="nav-link">Ghee Products</a>
+        <a href="testimonials.html" class="nav-link active" style="color: var(--color-gold-light);">Testimonials</a>
+        <a href="index.html#why" class="nav-link">Why Brajbhumi</a>
+        <a href="index.html#manufacturing" class="nav-link">Bilona Process</a>
+        <a href="index.html#about" class="nav-link">About Us</a>
+        <a href="index.html#contact" class="nav-link">Contact Us</a>
+      </nav>
+
+      <!-- Header CTAs & Cart Icon -->
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <a href="https://wa.me/916397180939?text=Hi%20Brajbhumi%2C%20I%20saw%20the%20customer%20reviews%20and%20want%20to%20order%20pure%20A2%20ghee"
+          target="_blank" rel="noreferrer" class="btn-gold hidden-mobile"
+          style="padding: 0.5rem 1.25rem; font-size: 0.8rem;">
+          <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor;">
+            <path
+              d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-0.999 3.648 3.742-.981z" />
+          </svg>
+          Order on WhatsApp
+        </a>
+
+        <!-- Cart Button Drawer Trigger -->
+        <button onclick="toggleCart()" aria-label="Open Cart Drawer"
+          style="position: relative; background: rgba(188,148,76,0.12); border: 1px solid var(--color-green-border); width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--color-gold); transition: var(--transition-smooth);">
+          <svg viewBox="0 0 24 24"
+            style="width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;">
+            <path
+              d="M3 3h2l.4 2M7 13h10l3.6-8H5.4M7 13L5.4 5M7 13l-2.3 4.6A1 1 0 005.6 19H17M9 21a1 1 0 100-2 1 1 0 000 2zm8 0a1 1 0 100-2 1 1 0 000 2z">
+            </path>
+          </svg>
+          <span id="cart-badge"
+            style="position: absolute; top: -4px; right: -4px; background: var(--color-gold); color: #07160d; font-size: 0.7rem; font-weight: 700; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">0</span>
+        </button>
+
+        <!-- Mobile Hamburger Menu Button -->
+        <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="mobile-toggle-btn"
+          aria-label="Toggle Navigation Menu">
+          <svg viewBox="0 0 24 24"
+            style="width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round;">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="mobile-menu-drawer">
+      <a href="index.html#home" onclick="toggleMobileMenu()" class="mobile-nav-link">Home</a>
+      <a href="index.html#products" onclick="toggleMobileMenu()" class="mobile-nav-link">Ghee Products</a>
+      <a href="testimonials.html" onclick="toggleMobileMenu()" class="mobile-nav-link active">Testimonials</a>
+      <a href="index.html#why" onclick="toggleMobileMenu()" class="mobile-nav-link">Why Brajbhumi</a>
+      <a href="index.html#manufacturing" onclick="toggleMobileMenu()" class="mobile-nav-link">Bilona Process</a>
+      <a href="index.html#about" onclick="toggleMobileMenu()" class="mobile-nav-link">About Us</a>
+      <a href="index.html#contact" onclick="toggleMobileMenu()" class="mobile-nav-link">Contact Us</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Testimonial Hero Section -->
+    <section class="testimonial-hero">
+      <div class="container-x">
+        <div class="testimonial-badge">
+          <span>✦</span> REAL CUSTOMER STORIES · 100% VERIFIED PURCHASES <span>✦</span>
+        </div>
+        <h1 class="testimonial-title font-display">
+          WHAT OUR CUSTOMERS SAY
+        </h1>
+        <p class="testimonial-subtitle">
+          Real feedback from our happy customers across India who experience the pure aroma, traditional bilona taste, and health benefits of Brajbhumi A2 Desi Cow Ghee.
+        </p>
+      </div>
+    </section>
+
+    <!-- Testimonial Gallery Section -->
+    <section class="testimonial-gallery-section">
+      <div class="container-x">
+
+        <div class="testimonial-section-header">
+          <span class="eyebrow" style="color: var(--color-gold); font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase;">GENUINE FEEDBACK</span>
+          <h2 class="font-display" style="font-size: 2rem; color: var(--color-cream); margin-top: 0.35rem;">
+            REAL CUSTOMER FEEDBACK
+          </h2>
+          <p style="font-size: 0.9rem; color: var(--color-cream-muted); margin-top: 0.35rem;">
+            Click on any testimonial image below to view it in full resolution.
+          </p>
+        </div>
+
+        <!-- 6 Responsive Testimonial Cards Grid -->
+        <div class="testimonial-grid">
+
+          <!-- Review 1 -->
+          <div class="testimonial-card" onclick="openLightbox(0)" aria-label="Open Testimonial 1">
+            <img src="image/review/1.jpg" alt="Brajbhumi Customer Feedback Review 1" class="testimonial-img" loading="lazy" />
+          </div>
+
+          <!-- Review 2 -->
+          <div class="testimonial-card" onclick="openLightbox(1)" aria-label="Open Testimonial 2">
+            <img src="image/review/2.jpg" alt="Brajbhumi Customer Feedback Review 2" class="testimonial-img" loading="lazy" />
+          </div>
+
+          <!-- Review 3 -->
+          <div class="testimonial-card" onclick="openLightbox(2)" aria-label="Open Testimonial 3">
+            <img src="image/review/3.jpg" alt="Brajbhumi Customer Feedback Review 3" class="testimonial-img" loading="lazy" />
+          </div>
+
+          <!-- Review 4 -->
+          <div class="testimonial-card" onclick="openLightbox(3)" aria-label="Open Testimonial 4">
+            <img src="image/review/4.jpg" alt="Brajbhumi Customer Feedback Review 4" class="testimonial-img" loading="lazy" />
+          </div>
+
+          <!-- Review 5 -->
+          <div class="testimonial-card" onclick="openLightbox(4)" aria-label="Open Testimonial 5">
+            <img src="image/review/5.jpg" alt="Brajbhumi Customer Feedback Review 5" class="testimonial-img" loading="lazy" />
+          </div>
+
+          <!-- Review 6 -->
+          <div class="testimonial-card" onclick="openLightbox(5)" aria-label="Open Testimonial 6">
+            <img src="image/review/6.jpg" alt="Brajbhumi Customer Feedback Review 6" class="testimonial-img" loading="lazy" />
+          </div>
+
+        </div>
+
+        <!-- CTA Section -->
+        <div class="testimonial-cta-card" style="margin-top: 5rem;">
+          <span class="eyebrow" style="color: var(--color-gold); font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.5rem; display: block;">PURE A2 BILONA GHEE</span>
+          <h2 class="font-display">Experience the Taste of Tradition</h2>
+          <p>
+            Join thousands of satisfied families across India enjoying 100% pure A2 Desi Cow Bilona Ghee, lab-certified for purity and taste.
+          </p>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="index.html#products" class="btn-gold" style="padding: 0.75rem 2rem;">Explore Products</a>
+            <a href="https://wa.me/916397180939?text=Hi%20Brajbhumi%2C%20I%20reviewed%20the%20customer%20feedback%20and%20want%20to%20order%20pure%20ghee"
+              target="_blank" rel="noreferrer" class="btn-ghost" style="padding: 0.75rem 2rem;">
+              Order on WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Fullscreen Image Lightbox Modal -->
+  <div id="testimonial-lightbox" class="lightbox-modal" onclick="handleLightboxBackdropClick(event)">
+    <div class="lightbox-container">
+      <div class="lightbox-header">
+        <span id="lightbox-counter" class="lightbox-counter">Review 1 of 6</span>
+        <button onclick="closeLightbox()" class="lightbox-close" aria-label="Close Lightbox">✕</button>
+      </div>
+
+      <div class="lightbox-img-wrapper">
+        <button onclick="prevLightbox(event)" class="lightbox-nav-btn lightbox-prev" aria-label="Previous Review">❮</button>
+        <img id="lightbox-img" src="" alt="Full Resolution Customer Testimonial" class="lightbox-img" />
+        <button onclick="nextLightbox(event)" class="lightbox-nav-btn lightbox-next" aria-label="Next Review">❯</button>
+      </div>
+
+      <div id="lightbox-caption" class="lightbox-caption">
+        Verified Customer Feedback Screenshot · Brajbhumi Pure A2 Desi Cow Ghee
+      </div>
+    </div>
+  </div>
+
+  <!-- Shopping Cart Drawer Overlay -->
+  <div id="cart-drawer-overlay" class="cart-drawer-overlay" onclick="toggleCart()">
+    <div class="cart-drawer" onclick="event.stopPropagation()">
+      <div class="cart-drawer-header">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <h3 class="font-display" style="font-size: 1.2rem; color: var(--color-cream);">Your Shopping Cart</h3>
+        </div>
+        <button onclick="toggleCart()" class="cart-drawer-close" aria-label="Close Cart Drawer">✕</button>
+      </div>
+
+      <div id="cart-drawer-items" class="cart-drawer-body">
+        <!-- Cart items rendered via app.js -->
+      </div>
+
+      <div class="cart-drawer-footer">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem; font-weight: 600;">
+          <span>Subtotal</span>
+          <span id="cart-subtotal-price" style="color: var(--color-gold-light);">₹0</span>
+        </div>
+        <div style="font-size: 0.75rem; color: #4ade80; margin-bottom: 1rem; text-align: center;">
+          ✓ Free Express Shipping Across India Included
+        </div>
+        <button onclick="checkoutWhatsApp()" class="btn-gold" style="width: 100%; padding: 0.85rem;">
+          Checkout on WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Mobile Bottom Order Bar -->
+  <div class="sticky-mobile-order-bar">
+    <div class="sticky-mobile-inner">
+      <div class="sticky-mobile-text">
+        <span class="sticky-mobile-title">Brajbhumi Pure A2 Ghee</span>
+        <span class="sticky-mobile-sub">100% Bilona · From ₹980</span>
+      </div>
+      <a href="https://wa.me/916397180939?text=Hi%20Brajbhumi%2C%20I%20would%20like%20to%20order%20Pure%20A2%20Ghee"
+        target="_blank" rel="noreferrer" class="sticky-mobile-btn">
+        <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor;">
+          <path
+            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-0.999 3.648 3.742-.981z" />
+        </svg>
+        Order on WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer
+    style="background: #040d08; border-top: 1px solid var(--color-green-border); padding: 4rem 0 2rem; margin-top: 2rem;">
+    <div class="container-x">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2.5rem; margin-bottom: 3rem;">
+        
+        <div>
+          <img src="image/logo.png?v=2" alt="Brajbhumi Pure Ghee Logo"
+            style="height: 58px; width: auto; margin-bottom: 1rem; filter: drop-shadow(0 2px 10px rgba(188,148,76,0.35));" />
+          <p style="font-size: 0.85rem; color: var(--color-cream-muted); line-height: 1.6; margin-bottom: 1.25rem;">
+            Rooted in heritage and craftsmanship. Hand-churned farm fresh A2 Desi Cow Bilona Ghee delivered directly to your home.
+          </p>
+          <div style="display: flex; gap: 0.75rem;">
+            <a href="https://wa.me/916397180939" target="_blank" rel="noreferrer"
+              style="width: 36px; height: 36px; border-radius: 50%; background: rgba(188,148,76,0.12); border: 1px solid var(--color-green-border); display: flex; align-items: center; justify-content: center; color: var(--color-gold); text-decoration: none;">
+              <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor;">
+                <path
+                  d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-0.999 3.648 3.742-.981z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-gold); letter-spacing: 0.15em; margin-bottom: 1rem;">
+            Products
+          </h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem;">
+            <li><a href="index.html#products" style="color: var(--color-cream-muted); text-decoration: none;">500g Signature Glass Jar (₹980)</a></li>
+            <li><a href="index.html#products" style="color: var(--color-cream-muted); text-decoration: none;">1 Liter Glass Jar Pack (₹1,950)</a></li>
+            <li><a href="index.html#products" style="color: var(--color-cream-muted); text-decoration: none;">5 Liter Steel Dolchi Container (₹8,900)</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-gold); letter-spacing: 0.15em; margin-bottom: 1rem;">
+            Company
+          </h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem;">
+            <li><a href="index.html#about" style="color: var(--color-cream-muted); text-decoration: none;">About Us</a></li>
+            <li><a href="index.html#why" style="color: var(--color-cream-muted); text-decoration: none;">Why Us</a></li>
+            <li><a href="testimonials.html" style="color: var(--color-cream-muted); text-decoration: none;">Customer Reviews</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-gold); letter-spacing: 0.15em; margin-bottom: 1rem;">
+            Connect With Us
+          </h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem;">
+            <li><a href="mailto:brajbhumi01@gmail.com" style="color: var(--color-cream-muted); text-decoration: none;">brajbhumi01@gmail.com</a></li>
+            <li><a href="tel:+916397180939" style="color: var(--color-cream-muted); text-decoration: none;">+91 6397180939</a></li>
+            <li style="color: var(--color-cream-muted);">Brajbhumi Farm Kitchens, Vrindavan / Mathura, UP, India</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div style="border-top: 1px solid rgba(188,148,76,0.15); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.78rem; color: var(--color-cream-muted);">
+        <div>© 2026 Brajbhumi Ghee. All rights reserved. Crafted for Health & Purity.</div>
+        <div style="display: flex; gap: 1.25rem;">
+          <a href="index.html#home" style="color: var(--color-cream-muted); text-decoration: none;">Home</a>
+          <a href="testimonials.html" style="color: var(--color-cream-muted); text-decoration: none;">Testimonials</a>
+          <a href="index.html#products" style="color: var(--color-cream-muted); text-decoration: none;">Products</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript Scripts -->
+  <script src="app.js"></script>
+  <script>
+    // Testimonials Lightbox Functionality
+    const TESTIMONIAL_IMAGES = [
+      { src: 'image/review/1.jpg', alt: 'Customer Review 1', caption: 'Verified Customer Feedback #1 · 100% Pure A2 Desi Cow Ghee' },
+      { src: 'image/review/2.jpg', alt: 'Customer Review 2', caption: 'Verified Customer Feedback #2 · 100% Pure A2 Desi Cow Ghee' },
+      { src: 'image/review/3.jpg', alt: 'Customer Review 3', caption: 'Verified Customer Feedback #3 · 100% Pure A2 Desi Cow Ghee' },
+      { src: 'image/review/4.jpg', alt: 'Customer Review 4', caption: 'Verified Customer Feedback #4 · 100% Pure A2 Desi Cow Ghee' },
+      { src: 'image/review/5.jpg', alt: 'Customer Review 5', caption: 'Verified Customer Feedback #5 · 100% Pure A2 Desi Cow Ghee' },
+      { src: 'image/review/6.jpg', alt: 'Customer Review 6', caption: 'Verified Customer Feedback #6 · 100% Pure A2 Desi Cow Ghee' }
+    ];
+
+    let currentLightboxIndex = 0;
+
+    function openLightbox(index) {
+      currentLightboxIndex = index;
+      updateLightboxContent();
+      const modal = document.getElementById('testimonial-lightbox');
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('testimonial-lightbox');
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function prevLightbox(e) {
+      if (e) e.stopPropagation();
+      currentLightboxIndex = (currentLightboxIndex - 1 + TESTIMONIAL_IMAGES.length) % TESTIMONIAL_IMAGES.length;
+      updateLightboxContent();
+    }
+
+    function nextLightbox(e) {
+      if (e) e.stopPropagation();
+      currentLightboxIndex = (currentLightboxIndex + 1) % TESTIMONIAL_IMAGES.length;
+      updateLightboxContent();
+    }
+
+    function updateLightboxContent() {
+      const item = TESTIMONIAL_IMAGES[currentLightboxIndex];
+      const img = document.getElementById('lightbox-img');
+      const counter = document.getElementById('lightbox-counter');
+      const caption = document.getElementById('lightbox-caption');
+
+      if (img) {
+        img.src = item.src;
+        img.alt = item.alt;
+      }
+      if (counter) {
+        counter.innerText = `Review ${currentLightboxIndex + 1} of ${TESTIMONIAL_IMAGES.length}`;
+      }
+      if (caption) {
+        caption.innerText = item.caption;
+      }
+    }
+
+    function handleLightboxBackdropClick(e) {
+      if (e.target.id === 'testimonial-lightbox') {
+        closeLightbox();
+      }
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function (e) {
+      const modal = document.getElementById('testimonial-lightbox');
+      if (!modal || !modal.classList.contains('active')) return;
+
+      if (e.key === 'Escape') {
+        closeLightbox();
+      } else if (e.key === 'ArrowLeft') {
+        prevLightbox();
+      } else if (e.key === 'ArrowRight') {
+        nextLightbox();
+      }
+    });
+  </script>
+</body>
+
+</html>
