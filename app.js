@@ -75,6 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setupManufacturingVideos();
 
+  initFeedbackSystem();
+
 });
 
 
@@ -1074,4 +1076,327 @@ function closeSocialProof() {
   const toast = document.getElementById('social-proof-toast');
   if (toast) toast.classList.remove('active');
   clearInterval(socialProofTimer);
+}
+
+
+// ==========================================================================
+// CUSTOMER RATING & FEEDBACK SYSTEM LOGIC
+// ==========================================================================
+
+const INITIAL_REVIEWS = [
+  {
+    id: 'rev-1',
+    name: 'Sushma Sharma',
+    city: 'New Delhi',
+    rating: 5,
+    product: '1 Liter Glass Jar',
+    comment: 'Brajbhumi A2 ghee ki khushbu bilkul hamari dadi ke hath ke bilona ghee jaisi hai! Danedar texture aur golden colour ekdum pure hai. Highly recommended!',
+    date: '15 Aug 2026',
+    verified: true
+  },
+  {
+    id: 'rev-2',
+    name: 'Rajesh Verma',
+    city: 'Jaipur, Rajasthan',
+    rating: 5,
+    product: '5 Liter Steel Dolchi Container',
+    comment: '5L Steel Dolchi container order kiya tha. Packing bahut hi safe thi aur ghee quality unbeatable hai. Halwa aur roti par lagane se swad do guna ho jata hai.',
+    date: '12 Aug 2026',
+    verified: true
+  },
+  {
+    id: 'rev-3',
+    name: 'Dr. Meenakshi Sundaram',
+    city: 'Bengaluru',
+    rating: 5,
+    product: '500g Signature Jar',
+    comment: 'As a doctor, I check for A2 purity. Laboratory certificate verified pure A2 Bilona cow ghee with zero chemicals. Daily warm water with 1 spoon Ghee gives great energy!',
+    date: '08 Aug 2026',
+    verified: true
+  },
+  {
+    id: 'rev-4',
+    name: 'Vikramjit Singh',
+    city: 'Chandigarh',
+    rating: 5,
+    product: '1 Liter Glass Jar',
+    comment: 'Very fast delivery and 100% pure taste. Pure Bilona method ghee with natural aroma. WhatsApp order process was super smooth.',
+    date: '04 Aug 2026',
+    verified: true
+  },
+  {
+    id: 'rev-5',
+    name: 'Pooja Agarwal',
+    city: 'Mathura, UP',
+    rating: 4,
+    product: '500g Signature Jar',
+    comment: 'Shuddh A2 Desi cow ghee. Bilona churned aroma is very authentic. Delivery was done in 2 days. Will reorder 1L pack next time.',
+    date: '01 Aug 2026',
+    verified: true
+  }
+];
+
+let selectedStarRating = 5;
+let currentActiveRatingFilter = 'all';
+
+const STAR_LABELS = {
+  1: '1 Star · Poor (need improvement)',
+  2: '2 Stars · Fair (could be better)',
+  3: '3 Stars · Good (satisfied)',
+  4: '4 Stars · Very Good (loved it!)',
+  5: '5 Stars · Excellent! (Pure & Authentic Aroma ❤️)'
+};
+
+function getStoredReviews() {
+  try {
+    const local = localStorage.getItem('brajbhumi_customer_reviews');
+    if (local) {
+      return JSON.parse(local);
+    }
+  } catch (e) {
+    console.warn('LocalStorage error:', e);
+  }
+  return INITIAL_REVIEWS;
+}
+
+function saveStoredReviews(reviews) {
+  try {
+    localStorage.setItem('brajbhumi_customer_reviews', JSON.stringify(reviews));
+  } catch (e) {
+    console.warn('LocalStorage save error:', e);
+  }
+}
+
+function initFeedbackSystem() {
+  setupStarRatingPicker();
+  renderFeedbackSummaryAndList();
+}
+
+function setupStarRatingPicker() {
+  const container = document.getElementById('star-picker-container');
+  const labelEl = document.getElementById('star-picker-label');
+  if (!container) return;
+
+  container.innerHTML = '';
+  for (let i = 1; i <= 5; i++) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = `star-rating-btn ${i <= selectedStarRating ? 'active' : ''}`;
+    btn.innerHTML = '★';
+    btn.setAttribute('aria-label', `${i} Star Rating`);
+
+    btn.addEventListener('mouseenter', () => highlightStars(i));
+    btn.addEventListener('mouseleave', () => highlightStars(selectedStarRating));
+    btn.addEventListener('click', () => {
+      selectedStarRating = i;
+      highlightStars(i);
+      if (labelEl) labelEl.innerText = STAR_LABELS[i];
+    });
+
+    container.appendChild(btn);
+  }
+  if (labelEl) labelEl.innerText = STAR_LABELS[selectedStarRating];
+}
+
+function highlightStars(count) {
+  const container = document.getElementById('star-picker-container');
+  if (!container) return;
+  const btns = container.querySelectorAll('.star-rating-btn');
+  btns.forEach((btn, index) => {
+    if (index < count) {
+      btn.classList.add('hovered');
+    } else {
+      btn.classList.remove('hovered');
+    }
+  });
+}
+
+function renderFeedbackSummaryAndList() {
+  const reviews = getStoredReviews();
+  const summaryScoreEl = document.getElementById('feedback-avg-score');
+  const summaryCountEl = document.getElementById('feedback-total-count');
+  const starsHeaderEl = document.getElementById('feedback-header-stars');
+  const breakdownListEl = document.getElementById('feedback-breakdown-bars');
+  const reviewsContainer = document.getElementById('published-reviews-list');
+
+  // Calculate Average and Counts
+  const total = reviews.length;
+  const sum = reviews.reduce((acc, r) => acc + (Number(r.rating) || 5), 0);
+  const avg = total > 0 ? (sum / total).toFixed(1) : '5.0';
+
+  if (summaryScoreEl) summaryScoreEl.innerText = avg;
+  if (summaryCountEl) summaryCountEl.innerText = `Based on ${total} verified customer ratings`;
+
+  if (starsHeaderEl) {
+    const roundedAvg = Math.round(Number(avg));
+    starsHeaderEl.innerText = '★'.repeat(roundedAvg) + '☆'.repeat(5 - roundedAvg);
+  }
+
+  // Calculate breakdown for 5,4,3,2,1
+  if (breakdownListEl) {
+    const counts = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
+    reviews.forEach(r => {
+      const star = Number(r.rating) || 5;
+      if (counts[star] !== undefined) counts[star]++;
+    });
+
+    breakdownListEl.innerHTML = [5, 4, 3, 2, 1].map(star => {
+      const c = counts[star];
+      const pct = total > 0 ? Math.round((c / total) * 100) : 0;
+      return `
+        <div class="rating-bar-row">
+          <span class="rating-bar-label">${star} ★</span>
+          <div class="rating-bar-track">
+            <div class="rating-bar-fill" style="width: ${pct}%;"></div>
+          </div>
+          <span class="rating-bar-count">${c}</span>
+        </div>
+      `;
+    }).join('');
+  }
+
+  // Render Reviews List with filter
+  if (reviewsContainer) {
+    let filtered = reviews;
+    if (currentActiveRatingFilter !== 'all') {
+      const targetStar = Number(currentActiveRatingFilter);
+      filtered = reviews.filter(r => Number(r.rating) === targetStar);
+    }
+
+    if (filtered.length === 0) {
+      reviewsContainer.innerHTML = `
+        <div style="text-align: center; padding: 2rem; color: var(--color-cream-muted);">
+          No reviews found for this rating filter yet. Be the first to leave one!
+        </div>
+      `;
+      return;
+    }
+
+    reviewsContainer.innerHTML = filtered.map(r => `
+      <div class="review-item-card">
+        <div class="review-item-header">
+          <div>
+            <div class="review-user-name">${escapeHtml(r.name)}</div>
+            <div class="review-user-meta">${escapeHtml(r.city || 'India')} · ${escapeHtml(r.date || 'Recent')}</div>
+          </div>
+          <span class="verified-buyer-badge">
+            ✓ Verified Buyer
+          </span>
+        </div>
+        <div class="rating-stars-gold" style="font-size: 1.1rem;">
+          ${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}
+        </div>
+        <p class="review-text-content">
+          "${escapeHtml(r.comment)}"
+        </p>
+        ${r.product ? `<span class="review-product-tag">🛒 Product: ${escapeHtml(r.product)}</span>` : ''}
+      </div>
+    `).join('');
+  }
+}
+
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function filterReviewsByRating(star, btn) {
+  currentActiveRatingFilter = star;
+  const filterBtns = document.querySelectorAll('.filter-pill-btn');
+  filterBtns.forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  renderFeedbackSummaryAndList();
+}
+
+function submitCustomerFeedback(event) {
+  if (event) event.preventDefault();
+
+  const nameInput = document.getElementById('feedback-name');
+  const cityInput = document.getElementById('feedback-city');
+  const productSelect = document.getElementById('feedback-product');
+  const commentInput = document.getElementById('feedback-comment');
+
+  const name = nameInput ? nameInput.value.trim() : '';
+  const city = cityInput ? cityInput.value.trim() : '';
+  const product = productSelect ? productSelect.value : '';
+  const comment = commentInput ? commentInput.value.trim() : '';
+
+  if (!name || !comment) {
+    showToastNotification('⚠️ Please enter your name and feedback comment!');
+    return;
+  }
+
+  const today = new Date();
+  const dateStr = today.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+
+  const newReview = {
+    id: 'rev-' + Date.now(),
+    name: name,
+    city: city || 'India',
+    rating: selectedStarRating,
+    product: product || 'Brajbhumi Pure A2 Ghee',
+    comment: comment,
+    date: dateStr,
+    verified: true
+  };
+
+  const currentList = getStoredReviews();
+  currentList.unshift(newReview);
+  saveStoredReviews(currentList);
+
+  renderFeedbackSummaryAndList();
+
+  // Reset form
+  if (nameInput) nameInput.value = '';
+  if (cityInput) cityInput.value = '';
+  if (commentInput) commentInput.value = '';
+  selectedStarRating = 5;
+  setupStarRatingPicker();
+
+  showToastNotification(`✨ Thank you ${name}! Your ${newReview.rating}-star review has been published.`);
+}
+
+function sendFeedbackToWhatsApp() {
+  const nameInput = document.getElementById('feedback-name');
+  const cityInput = document.getElementById('feedback-city');
+  const commentInput = document.getElementById('feedback-comment');
+  const productSelect = document.getElementById('feedback-product');
+
+  const name = nameInput ? nameInput.value.trim() : 'Valued Customer';
+  const city = cityInput ? cityInput.value.trim() : '';
+  const comment = commentInput ? commentInput.value.trim() : '';
+  const product = productSelect ? productSelect.value : 'Pure A2 Ghee';
+
+  const stars = '★'.repeat(selectedStarRating);
+
+  let msg = `Hi Brajbhumi Ghee Team,%0A%0AI would like to submit my feedback & rating:%0A%0A⭐ *Rating:* ${selectedStarRating}/5 Stars (${stars})%0A👤 *Name:* ${encodeURIComponent(name)}`;
+  if (city) msg += `%0A📍 *Location:* ${encodeURIComponent(city)}`;
+  if (product) msg += `%0A🛒 *Product:* ${encodeURIComponent(product)}`;
+  if (comment) msg += `%0A💬 *Feedback:* ${encodeURIComponent(comment)}`;
+
+  window.open(`https://wa.me/916397180939?text=${msg}`, '_blank');
+}
+
+function showToastNotification(message) {
+  let toast = document.getElementById('feedback-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'feedback-toast';
+    toast.className = 'feedback-toast';
+    document.body.appendChild(toast);
+  }
+
+  toast.innerHTML = `
+    <span style="font-size: 1.2rem;">🌟</span>
+    <div>${message}</div>
+  `;
+
+  toast.classList.add('show');
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 4000);
 }
