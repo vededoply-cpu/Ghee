@@ -16,13 +16,14 @@ const PRODUCTS = [
     sizes: [
       { label: '500g Glass Jar', price: 980 }
     ],
-    features: ['100% Pure A2 Cow Milk', 'Traditional Bilona Method', 'NABL Certified Lab Tested', 'Glass Jar Packaging']
+    features: ['100% Pure A2 Cow Milk', 'Traditional Bilona Method', 'NABL Certified Lab Tested', 'Glass Jar Packaging'],
+    couponOffer: null
   },
   {
     id: 'cow-ghee-1kg',
     name: 'Brajbhumi Pure Desi Cow A2 Ghee (1 Liter)',
     category: 'cow-ghee',
-    badge: '1 Liter Pack · Best Value',
+    badge: '1 Liter Pack · ₹100 Instant Discount',
     desc: 'Golden, granular premium A2 cow ghee in a convenient 1 Liter glass jar, delivered direct from farm kitchens.',
     image: 'image/1kg.jpg?v=2',
     accentColor: '#e5c378',
@@ -30,13 +31,14 @@ const PRODUCTS = [
     sizes: [
       { label: '1 Liter Glass Jar', price: 1950 }
     ],
-    features: ['Granular Danedar Texture', 'Zero Preservatives', 'Rich Aroma & Taste', 'Free Express Delivery']
+    features: ['Granular Danedar Texture', 'Zero Preservatives', 'Rich Aroma & Taste', 'Free Express Delivery'],
+    couponOffer: { code: 'GHEE100', amount: 100, text: 'Instant ₹100 Discount Applied' }
   },
   {
     id: 'cow-ghee-5kg-tin',
     name: 'Brajbhumi Pure Desi Cow A2 Ghee (5 Liter Steel Dolchi)',
     category: 'cow-ghee',
-    badge: '5 Liter · Steel Dolchi Container',
+    badge: '5 Liter · ₹300 Instant Discount',
     desc: 'Pure A2 Bilona Cow Ghee in a heavy-duty traditional 5 Liter stainless steel dolchi container seal.',
     image: 'image/5kg.png?v=2',
     accentColor: '#bc944c',
@@ -44,16 +46,25 @@ const PRODUCTS = [
     sizes: [
       { label: '5 Liter Steel Dolchi Container', price: 8900 }
     ],
-    features: ['100% Pure A2 Cow Ghee', 'Traditional Steel Dolchi Container', 'GC Lab Tested Pure', 'Free Express Shipping']
+    features: ['100% Pure A2 Cow Ghee', 'Traditional Steel Dolchi Container', 'GC Lab Tested Pure', 'Free Express Shipping'],
+    couponOffer: { code: 'GHEE300', amount: 300, text: 'Instant ₹300 Discount Applied' }
   }
 ];
 
 
 // ==========================================================================
-// STATE MANAGEMENT
+// STATE MANAGEMENT & COUPON CONFIG
 // ==========================================================================
 
+const VALID_COUPONS = {
+  'GHEE100': { code: 'GHEE100', discount: 100, label: '₹100 Instant Discount' },
+  'NEXT100': { code: 'NEXT100', discount: 100, label: '₹100 Discount' },
+  'GHEE300': { code: 'GHEE300', discount: 300, label: '₹300 Instant Discount' },
+  'NEXT300': { code: 'NEXT300', discount: 300, label: '₹300 Discount' }
+};
+
 let cart = [];
+let appliedCoupon = null;
 let activeCategory = 'all';
 let currentModalProduct = null;
 let currentSelectedSizeIndex = 0;
@@ -307,6 +318,13 @@ function addToCart(product, sizeLabel, price) {
 
   }
 
+  // Auto-apply instant discount coupon if not manually set
+  if (product.id === 'cow-ghee-5kg-tin') {
+    appliedCoupon = VALID_COUPONS['GHEE300'];
+  } else if (product.id === 'cow-ghee-1kg' && (!appliedCoupon || appliedCoupon.discount < 300)) {
+    appliedCoupon = VALID_COUPONS['GHEE100'];
+  }
+
   updateCartUI();
 
   toggleCart();
@@ -339,167 +357,212 @@ function updateQuantity(index, delta) {
 // UPDATE CART UI
 // ==========================================================================
 
+// ==========================================================================
+// COUPON & DISCOUNT LOGIC
+// ==========================================================================
+
+function calculateEarnedCoupon() {
+  const has5kg = cart.some(item => item.product.id === 'cow-ghee-5kg-tin');
+  const has1kg = cart.some(item => item.product.id === 'cow-ghee-1kg');
+
+  if (has5kg) {
+    return { code: 'GHEE300', amount: 300, label: '₹300 Next Order Coupon' };
+  } else if (has1kg) {
+    return { code: 'GHEE100', amount: 100, label: '₹100 Next Order Coupon' };
+  }
+  return null;
+}
+
+function renderCouponSectionHtml(earnedCoupon) {
+  let html = '';
+
+  // Render Earned Coupon Badge if applicable
+  if (earnedCoupon) {
+    html += `
+      <div class="reward-earned-box">
+        <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: var(--color-gold); flex-shrink: 0;"><path d="M20 6h-3.17L18.4 3.2a1 1 0 0 0-1.6-1.2L14.4 5H9.6L7.2 2a1 1 0 0 0-1.6 1.2L7.17 6H4a2 2 0 0 0-2 2v3a1 1 0 0 0 1 1h1v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8h1a1 1 0 0 0 1-1V8a2 2 0 0 0-2-2zm-9-2h2v2h-2V4zm-6 4h14v2H5V8zm2 4h4v8H7v-8zm10 8h-4v-8h4v8z"/></svg>
+        <div style="font-size: 0.775rem;">
+          <strong style="color: var(--color-gold-light); display: block;">Next Order Cashback Unlocked!</strong>
+          <span style="color: var(--color-cream-muted);">Buying this item unlocks code <code style="color: var(--color-gold); background: rgba(0,0,0,0.5); padding: 2px 6px; border-radius: 4px; font-weight: 700;">${earnedCoupon.code}</code> (₹${earnedCoupon.amount} OFF on next order)!</span>
+        </div>
+      </div>
+    `;
+  }
+
+  // Render Applied Coupon or Input box
+  if (appliedCoupon) {
+    html += `
+      <div class="coupon-applied-box">
+        <div style="display: flex; align-items: center; gap: 0.4rem;">
+          <span style="font-weight: 700;">${appliedCoupon.code} Applied</span>
+          <span style="font-size: 0.75rem; opacity: 0.85;">(-₹${appliedCoupon.discount})</span>
+        </div>
+        <button onclick="removeCoupon()" style="background: none; border: none; color: #ef4444; font-size: 0.75rem; cursor: pointer; text-decoration: underline; font-weight: 600;">Remove</button>
+      </div>
+    `;
+  } else {
+    html += `
+      <div style="margin-top: 0.5rem;">
+        <label style="font-size: 0.75rem; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; display: block; margin-bottom: 0.25rem;">Apply Coupon Code:</label>
+        <div class="coupon-input-group">
+          <input type="text" id="coupon-code-input" class="coupon-input" placeholder="Enter code (e.g. GHEE100)" onkeydown="if(event.key==='Enter') applyCoupon()">
+          <button onclick="applyCoupon()" class="btn-gold" style="padding: 0.5rem 0.85rem; font-size: 0.775rem;">Apply</button>
+        </div>
+        <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; align-items: center; margin-top: 0.35rem;">
+          <span style="font-size: 0.7rem; color: var(--color-cream-muted);">Fast apply:</span>
+          <button onclick="applyCoupon('GHEE100')" class="coupon-chip">GHEE100 (-₹100)</button>
+          <button onclick="applyCoupon('GHEE300')" class="coupon-chip">GHEE300 (-₹300)</button>
+        </div>
+      </div>
+    `;
+  }
+
+  return html;
+}
+
+function applyCoupon(customCode) {
+  const inputEl = document.getElementById('coupon-code-input');
+  const code = (customCode || (inputEl ? inputEl.value : '')).trim().toUpperCase();
+
+  if (!code) {
+    alert('Kripya coupon code enter karein! (Jaise: GHEE100 ya GHEE300)');
+    return;
+  }
+
+  if (VALID_COUPONS[code]) {
+    appliedCoupon = VALID_COUPONS[code];
+  } else {
+    const saved = getSavedCoupons();
+    const found = saved.find(c => c.code === code);
+    if (found) {
+      appliedCoupon = { code: found.code, discount: found.discount, label: `₹${found.discount} Next Order Discount` };
+    } else {
+      alert(`Coupon code "${code}" valid nahi hai!\nValid Codes: GHEE100 (₹100 Off) | GHEE300 (₹300 Off)`);
+      return;
+    }
+  }
+
+  updateCartUI();
+}
+
+function removeCoupon() {
+  appliedCoupon = null;
+  updateCartUI();
+}
+
+function saveEarnedCoupon(code, discount) {
+  try {
+    let saved = getSavedCoupons();
+    if (!saved.some(c => c.code === code)) {
+      saved.push({ code, discount, date: new Date().toLocaleDateString() });
+      localStorage.setItem('brajbhumi_coupons', JSON.stringify(saved));
+    }
+  } catch (e) {
+    console.error('Error saving coupon:', e);
+  }
+}
+
+function getSavedCoupons() {
+  try {
+    const data = localStorage.getItem('brajbhumi_coupons');
+    return data ? JSON.parse(data) : [];
+  } catch (e) {
+    return [];
+  }
+}
+
+window.applyCoupon = applyCoupon;
+window.removeCoupon = removeCoupon;
+
+
+// ==========================================================================
+// UPDATE CART UI
+// ==========================================================================
+
 function updateCartUI() {
+  const cartBody = document.getElementById('cart-items-container');
+  const cartBadge = document.getElementById('cart-badge');
+  const cartSubtotalEl = document.getElementById('cart-subtotal');
+  const cartDiscountRow = document.getElementById('cart-discount-row');
+  const cartDiscountVal = document.getElementById('cart-discount-val');
+  const cartFinalTotalEl = document.getElementById('cart-final-total');
+  const couponContainer = document.getElementById('cart-coupon-section');
 
-  const cartBody =
-    document.getElementById('cart-items-container');
-
-  const cartBadge =
-    document.getElementById('cart-badge');
-
-  const cartSubtotalEl =
-    document.getElementById('cart-subtotal');
-
-  const totalItems =
-    cart.reduce(
-      (sum, item) => sum + item.quantity,
-      0
-    );
-
-  const totalPrice =
-    cart.reduce(
-      (sum, item) => sum + (item.price * item.quantity),
-      0
-    );
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
   if (cartBadge) {
     cartBadge.innerText = totalItems;
   }
 
+  let discountAmount = 0;
+  if (appliedCoupon) {
+    discountAmount = appliedCoupon.discount;
+  }
+  const finalTotal = Math.max(0, subtotal - discountAmount);
+
   if (cartSubtotalEl) {
-    cartSubtotalEl.innerText =
-      `₹${totalPrice.toLocaleString('en-IN')}`;
+    cartSubtotalEl.innerText = `₹${subtotal.toLocaleString('en-IN')}`;
+  }
+
+  if (cartDiscountRow && cartDiscountVal) {
+    if (appliedCoupon && discountAmount > 0) {
+      cartDiscountRow.style.display = 'flex';
+      cartDiscountVal.innerText = `-₹${discountAmount.toLocaleString('en-IN')}`;
+    } else {
+      cartDiscountRow.style.display = 'none';
+    }
+  }
+
+  if (cartFinalTotalEl) {
+    cartFinalTotalEl.innerText = `₹${finalTotal.toLocaleString('en-IN')}`;
+  }
+
+  const earnedCoupon = calculateEarnedCoupon();
+
+  if (couponContainer) {
+    couponContainer.innerHTML = renderCouponSectionHtml(earnedCoupon);
   }
 
   if (!cartBody) return;
 
   if (cart.length === 0) {
-
     cartBody.innerHTML = `
-
-      <div
-        style="
-          text-align: center;
-          padding: 3rem 1rem;
-          color: var(--color-cream-muted);
-        "
-      >
-
-        <svg
-          viewBox="0 0 24 24"
-          style="
-            width: 48px;
-            height: 48px;
-            stroke: var(--color-gold);
-            fill: none;
-            margin: 0 auto 1rem auto;
-            opacity: 0.5;
-          "
-        >
-
+      <div style="text-align: center; padding: 3rem 1rem; color: var(--color-cream-muted);">
+        <svg viewBox="0 0 24 24" style="width: 48px; height: 48px; stroke: var(--color-gold); fill: none; margin: 0 auto 1rem auto; opacity: 0.5;">
           <circle cx="12" cy="12" r="10"></circle>
-
           <path d="M8 12h8"></path>
-
         </svg>
-
-        <p
-          style="
-            font-family: var(--font-heading);
-            font-size: 1.1rem;
-            color: var(--color-cream);
-          "
-        >
+        <p style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-cream);">
           Your Cart is Empty
         </p>
-
-        <p
-          style="
-            font-size: 0.85rem;
-            margin-top: 0.5rem;
-          "
-        >
-          Explore our pure A2 ghee & wood-pressed oils
-          to add items.
+        <p style="font-size: 0.85rem; margin-top: 0.5rem;">
+          Explore our pure A2 ghee & wood-pressed oils to add items.
         </p>
-
       </div>
-
     `;
-
     return;
   }
 
   cartBody.innerHTML = cart.map((item, idx) => `
-
     <div class="cart-item">
-
-      <img
-        src="${item.product.image}"
-        alt="${item.product.name}"
-        class="cart-item-img"
-      />
-
+      <img src="${item.product.image}" alt="${item.product.name}" class="cart-item-img" />
       <div style="flex: 1;">
-
-        <h4
-          style="
-            font-size: 0.9rem;
-            font-family: var(--font-heading);
-            color: var(--color-cream);
-          "
-        >
+        <h4 style="font-size: 0.9rem; font-family: var(--font-heading); color: var(--color-cream);">
           ${item.product.name}
         </h4>
-
-        <span
-          style="
-            font-size: 0.75rem;
-            color: var(--color-gold);
-          "
-        >
+        <span style="font-size: 0.75rem; color: var(--color-gold);">
           ${item.sizeLabel} · ₹${item.price}
         </span>
-
+        ${item.product.couponOffer ? `<div style="font-size: 0.7rem; color: #4ade80; margin-top: 0.2rem; font-weight: 600;">Earns ₹${item.product.couponOffer.amount} Next Order Coupon</div>` : ''}
       </div>
-
-      <div
-        style="
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-        "
-      >
-
-        <button
-          onclick="updateQuantity(${idx}, -1)"
-          class="qty-btn"
-        >
-          -
-        </button>
-
-        <span
-          style="
-            font-size: 0.85rem;
-            font-weight: 600;
-          "
-        >
-          ${item.quantity}
-        </span>
-
-        <button
-          onclick="updateQuantity(${idx}, 1)"
-          class="qty-btn"
-        >
-          +
-        </button>
-
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <button onclick="updateQuantity(${idx}, -1)" class="qty-btn">-</button>
+        <span style="font-size: 0.85rem; font-weight: 600;">${item.quantity}</span>
+        <button onclick="updateQuantity(${idx}, 1)" class="qty-btn">+</button>
       </div>
-
     </div>
-
   `).join('');
-
 }
 
 
@@ -508,47 +571,42 @@ function updateCartUI() {
 // ==========================================================================
 
 function checkoutWhatsApp() {
-
   if (cart.length === 0) {
-
-    alert(
-      'Aapka cart khali hai. Pehle kuch products add karein!'
-    );
-
+    alert('Aapka cart khali hai. Pehle kuch products add karein!');
     return;
   }
 
-  let text =
-    `Hi Brajbhumi Food, I would like to place an order:\n\n`;
-
-  let totalPrice = 0;
+  let text = `Hi Brajbhumi Food, I would like to place an order:\n\n`;
+  let subtotal = 0;
 
   cart.forEach((item, idx) => {
-
-    const itemTotal =
-      item.price * item.quantity;
-
-    totalPrice += itemTotal;
-
-    text +=
-      `${idx + 1}. *${item.product.name}* ` +
-      `(${item.sizeLabel}) x ${item.quantity} = ₹${itemTotal}\n`;
-
+    const itemTotal = item.price * item.quantity;
+    subtotal += itemTotal;
+    text += `${idx + 1}. *${item.product.name}* (${item.sizeLabel}) x ${item.quantity} = ₹${itemTotal.toLocaleString('en-IN')}\n`;
   });
 
-  text += `\n*Total Amount:* ₹${totalPrice}\n`;
+  text += `\n*Subtotal:* ₹${subtotal.toLocaleString('en-IN')}\n`;
 
-  text +=
-    `\nPlease confirm availability and delivery details. Thank you!`;
+  let discount = 0;
+  if (appliedCoupon) {
+    discount = appliedCoupon.discount;
+    text += `*Coupon Applied (${appliedCoupon.code}):* -₹${discount.toLocaleString('en-IN')}\n`;
+  }
 
-  const encoded =
-    encodeURIComponent(text);
+  const finalTotal = Math.max(0, subtotal - discount);
+  text += `*Total Amount Payable:* ₹${finalTotal.toLocaleString('en-IN')}\n`;
 
-  const waUrl =
-    `https://wa.me/916397180939?text=${encoded}`;
+  const earnedCoupon = calculateEarnedCoupon();
+  if (earnedCoupon) {
+    text += `\n*Next Order Offer:* You earned a *₹${earnedCoupon.amount} OFF* Coupon Code: *${earnedCoupon.code}* for your NEXT order!\n`;
+    saveEarnedCoupon(earnedCoupon.code, earnedCoupon.amount);
+  }
 
+  text += `\nPlease confirm availability and delivery details. Thank you!`;
+
+  const encoded = encodeURIComponent(text);
+  const waUrl = `https://wa.me/916397180939?text=${encoded}`;
   window.open(waUrl, '_blank');
-
 }
 
 
@@ -602,7 +660,7 @@ function openProductModal(productId) {
               color: var(--color-gold);
             "
           >
-            ✦
+            •
           </span>
 
           ${f}
@@ -1144,7 +1202,7 @@ const STAR_LABELS = {
   2: '2 Stars · Fair (could be better)',
   3: '3 Stars · Good (satisfied)',
   4: '4 Stars · Very Good (loved it!)',
-  5: '5 Stars · Excellent! (Pure & Authentic Aroma ❤️)'
+  5: '5 Stars · Excellent! (Pure & Authentic Aroma)'
 };
 
 function getStoredReviews() {
@@ -1280,7 +1338,7 @@ function renderFeedbackSummaryAndList() {
             <div class="review-user-meta">${escapeHtml(r.city || 'India')} · ${escapeHtml(r.date || 'Recent')}</div>
           </div>
           <span class="verified-buyer-badge">
-            ✓ Verified Buyer
+            Verified Buyer
           </span>
         </div>
         <div class="rating-stars-gold" style="font-size: 1.1rem;">
@@ -1289,7 +1347,7 @@ function renderFeedbackSummaryAndList() {
         <p class="review-text-content">
           "${escapeHtml(r.comment)}"
         </p>
-        ${r.product ? `<span class="review-product-tag">🛒 Product: ${escapeHtml(r.product)}</span>` : ''}
+        ${r.product ? `<span class="review-product-tag">Product: ${escapeHtml(r.product)}</span>` : ''}
       </div>
     `).join('');
   }
@@ -1326,7 +1384,7 @@ function submitCustomerFeedback(event) {
   const comment = commentInput ? commentInput.value.trim() : '';
 
   if (!name || !comment) {
-    showToastNotification('⚠️ Please enter your name and feedback comment!');
+    showToastNotification('Please enter your name and feedback comment!');
     return;
   }
 
@@ -1357,7 +1415,7 @@ function submitCustomerFeedback(event) {
   selectedStarRating = 5;
   setupStarRatingPicker();
 
-  showToastNotification(`✨ Thank you ${name}! Your ${newReview.rating}-star review has been published.`);
+  showToastNotification(`Thank you ${name}! Your ${newReview.rating}-star review has been published.`);
 }
 
 function sendFeedbackToWhatsApp() {
@@ -1373,10 +1431,10 @@ function sendFeedbackToWhatsApp() {
 
   const stars = '★'.repeat(selectedStarRating);
 
-  let msg = `Hi Brajbhumi Ghee Team,%0A%0AI would like to submit my feedback & rating:%0A%0A⭐ *Rating:* ${selectedStarRating}/5 Stars (${stars})%0A👤 *Name:* ${encodeURIComponent(name)}`;
-  if (city) msg += `%0A📍 *Location:* ${encodeURIComponent(city)}`;
-  if (product) msg += `%0A🛒 *Product:* ${encodeURIComponent(product)}`;
-  if (comment) msg += `%0A💬 *Feedback:* ${encodeURIComponent(comment)}`;
+  let msg = `Hi Brajbhumi Ghee Team,%0A%0AI would like to submit my feedback & rating:%0A%0A*Rating:* ${selectedStarRating}/5 Stars (${stars})%0A*Name:* ${encodeURIComponent(name)}`;
+  if (city) msg += `%0A*Location:* ${encodeURIComponent(city)}`;
+  if (product) msg += `%0A*Product:* ${encodeURIComponent(product)}`;
+  if (comment) msg += `%0A*Feedback:* ${encodeURIComponent(comment)}`;
 
   window.open(`https://wa.me/916397180939?text=${msg}`, '_blank');
 }
@@ -1391,7 +1449,6 @@ function showToastNotification(message) {
   }
 
   toast.innerHTML = `
-    <span style="font-size: 1.2rem;">🌟</span>
     <div>${message}</div>
   `;
 
