@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bilona Process & Manufacturing · Brajbhumi Pure A2 Desi Cow Ghee</title>
+  <meta name="description"
+    content="Watch how Brajbhumi 100% Pure A2 Desi Cow Ghee is made using the traditional 5-step Vedic Bilona method. Hand-churned in wooden vats, small batches, and 0% preservatives." />
+  <meta name="keywords" content="bilona ghee manufacturing, traditional bilona process, wooden churner ghee, A2 cow ghee video, authentic bilona ghee video" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Bilona Process & Manufacturing · Brajbhumi Ghee" />
+  <meta property="og:description"
+    content="Traditional 5-step Vedic bilona method. Watch behind-the-scenes preparation videos of pure A2 Desi Cow Ghee." />
+  <meta property="og:type" content="website" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- Ambient Background Glow Effects -->
+  <div class="bg-glow-top"></div>
+  <div class="bg-glow-bottom"></div>
+
+  <!-- Sticky Header Navigation -->
+  <header class="sticky-header">
+    <div class="container-x"
+      style="display: flex; align-items: center; justify-content: space-between; padding-top: 0.75rem; padding-bottom: 0.75rem;">
+      <a href="index.html" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none;">
+        <img src="image/logo.png?v=2" alt="Brajbhumi Logo"
+          style="height: 52px; width: auto; object-fit: contain; filter: drop-shadow(0 2px 10px rgba(188,148,76,0.35));" />
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="nav-links hidden-mobile">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="products.html" class="nav-link">Ghee Products</a>
+        <a href="why.html" class="nav-link">Why Brajbhumi</a>
+        <a href="manufacturing.html" class="nav-link active">Bilona Process</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+      </nav>
+
+      <!-- Header CTAs & Cart Icon -->
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <a href="https://wa.me/916397180939?text=Hi%20Brajbhumi%2C%20I&#x27;d%20like%20to%20order%20pure%20bilona%20ghee"
+          target="_blank" rel="noreferrer" class="btn-gold hidden-mobile"
+          style="padding: 0.5rem 1.25rem; font-size: 0.8rem;">
+          <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor;">
+            <path
+              d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.893 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-0.999 3.648 3.742-.981z" />
+          </svg>
+          Order on WhatsApp
+        </a>
+
+        <!-- Cart Button Drawer Trigger -->
+        <button onclick="toggleCart()" aria-label="Open Cart Drawer"
+          style="position: relative; background: rgba(188,148,76,0.12); border: 1px solid var(--color-green-border); width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--color-gold); transition: var(--transition-smooth);">
+          <svg viewBox="0 0 24 24"
+            style="width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;">
+            <path
+              d="M3 3h2l.4 2M7 13h10l3.6-8H5.4M7 13L5.4 5M7 13l-2.3 4.6A1 1 0 005.6 19H17M9 21a1 1 0 100-2 1 1 0 000 2zm8 0a1 1 0 100-2 1 1 0 000 2z">
+            </path>
+          </svg>
+          <span id="cart-badge"
+            style="position: absolute; top: -4px; right: -4px; background: var(--color-gold); color: #07160d; font-size: 0.7rem; font-weight: 700; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">0</span>
+        </button>
+
+        <!-- Mobile Hamburger Menu Button -->
+        <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="mobile-toggle-btn"
+          aria-label="Toggle Navigation Menu">
+          <svg viewBox="0 0 24 24"
+            style="width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round;">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="mobile-menu-drawer">
+      <a href="index.html" onclick="toggleMobileMenu()" class="mobile-nav-link">Home</a>
+      <a href="products.html" onclick="toggleMobileMenu()" class="mobile-nav-link">Ghee Products</a>
+      <a href="why.html" onclick="toggleMobileMenu()" class="mobile-nav-link">Why Brajbhumi</a>
+      <a href="manufacturing.html" onclick="toggleMobileMenu()" class="mobile-nav-link active">Bilona Process</a>
+      <a href="about.html" onclick="toggleMobileMenu()" class="mobile-nav-link">About Us</a>
+      <a href="contact.html" onclick="toggleMobileMenu()" class="mobile-nav-link">Contact Us</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Hero Banner -->
+    <div class="page-hero-banner">
+      <div class="container-x">
+        <span class="eyebrow">Traditional Craftsmanship</span>
+        <h1 class="page-hero-title">The Traditional <span class="text-shimmer">Bilona Process</span></h1>
+        <p class="page-hero-desc">
+          Step into our farm kitchens. Learn how 100% pure A2 cow milk butter is hand-churned in traditional wooden bilona vats and slow-cooked to perfection.
+        </p>
+        <div class="breadcrumb-nav">
+          <a href="index.html">Home</a>
+          <span>›</span>
+          <span>Bilona Process</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5-Step Bilona Process Section -->
+    <section style="padding: 4rem 0 5rem 0;">
+      <div class="container-x">
+        <div style="text-align: center; margin-bottom: 3.5rem;">
+          <div
+            style="display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+            <span class="gold-line"></span>
+            <span class="eyebrow">Vedic Method</span>
+            <span class="gold-line" style="transform: rotate(180deg);"></span>
+          </div>
+          <h2 class="font-display" style="font-size: 2.5rem; color: var(--color-cream);">
+            5 Steps to <span class="text-shimmer">Pure Golden Ghee</span>
+          </h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+          <!-- Step 1 -->
+          <div class="feature-card">
+            <span style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; color: var(--color-gold); text-transform: uppercase;">Step 01</span>
+            <h3 class="font-display" style="font-size: 1.2rem; color: var(--color-cream); margin: 0.5rem 0 0.35rem 0;">Fresh A2 Cow Milk</h3>
+            <p style="font-size: 0.85rem; color: var(--color-cream-muted);">Fresh, unprocessed A2 milk is collected daily from free-grazing Indian indigenous cows.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="feature-card">
+            <span style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; color: var(--color-gold); text-transform: uppercase;">Step 02</span>
+            <h3 class="font-display" style="font-size: 1.2rem; color: var(--color-cream); margin: 0.5rem 0 0.35rem 0;">Curd Formulation</h3>
+            <p style="font-size: 0.85rem; color: var(--color-cream-muted);">Whole milk is boiled gently and converted overnight into rich, natural curd using traditional cultures.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="feature-card">
+            <span style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; color: var(--color-gold); text-transform: uppercase;">Step 03</span>
+            <h3 class="font-display" style="font-size: 1.2rem; color: var(--color-cream); margin: 0.5rem 0 0.35rem 0;">Wooden Bilona Churning</h3>
+            <p style="font-size: 0.85rem; color: var(--color-cream-muted);">Curd is hand-churned bi-directionally using wooden bilona churners to extract pure makkhan (butter).</p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="feature-card">
+            <span style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; color: var(--color-gold); text-transform: uppercase;">Step 04</span>
+            <h3 class="font-display" style="font-size: 1.2rem; color: var(--color-cream); margin: 0.5rem 0 0.35rem 0;">Slow Heating</h3>
+            <p style="font-size: 0.85rem; color: var(--color-cream-muted);">Makkhan is slowly melted on low flame over cow-dung cake fires to retain golden aroma and natural nutrients.</p>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="feature-card">
+            <span style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; color: var(--color-gold); text-transform: uppercase;">Step 05</span>
+            <h3 class="font-display" style="font-size: 1.2rem; color: var(--color-cream); margin: 0.5rem 0 0.35rem 0;">Glass Jar Sealing</h3>
+            <p style="font-size: 0.85rem; color: var(--color-cream-muted);">Pure golden liquid is filtered and poured into sterile glass jars where it naturally granulates into golden crystals.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manufacturing & Process Videos Section -->
+    <section id="manufacturing" class="manufacturing-section">
+      <div class="container-x">
+        <div class="manufacturing-heading">
+          <div class="heading-label">
+            <span class="gold-line"></span>
+            <span class="eyebrow">Behind The Scenes Videos</span>
+            <span class="gold-line"></span>
+          </div>
+          <h2 class="font-display">
+            Watch Our Farm Kitchen <span class="text-shimmer">Churning Live</span>
+          </h2>
+          <p>
+            Watch how our traditional A2 Bilona Ghee preparation and small-batch churning process is executed with extreme care.
+          </p>
+        </div>
+
+        <div class="manufacturing-grid">
+          <div class="mfg-video-card">
+            <div class="mfg-video-wrapper">
+              <video controls playsinline preload="metadata" class="mfg-video-player">
+                <source src="videos/1.mp4" type="video/mp4">
+              </video>
+              <div class="video-number">01</div>
+            </div>
+            <div class="mfg-card-content">
+              <span class="mfg-card-label">Traditional Process</span>
+              <h3 class="font-display">Traditional A2 Bilona Churning</h3>
+              <p>
+                Hand-churning curdled milk butter in traditional wooden bilona vats to preserve its natural richness, aroma and authentic texture.
+              </p>
+            </div>
+          </div>
+
+          <div class="mfg-video-card">
+            <div class="mfg-video-wrapper">
+              <video controls playsinline preload="metadata" class="mfg-video-player">
+                <source src="videos/2.mp4" type="video/mp4">
+              </video>
+              <div class="video-number">02</div>
+            </div>
+            <div class="mfg-card-content">
+              <span class="mfg-card-label">Traditional Process</span>
+              <h3 class="font-display">Hand Mixing & Preparation</h3>
+              <p>
+                Carefully prepared by hand in small batches to maintain authentic taste, aroma and traditional quality.
+              </p>
+            </div>
+          </div>
+
+          <div class="mfg-video-card">
+            <div class="mfg-video-wrapper">
+              <video controls playsinline preload="metadata" class="mfg-video-player">
+                <source src="videos/3.mp4" type="video/mp4">
+              </video>
+              <div class="video-number">03</div>
+            </div>
+            <div class="mfg-card-content">
+              <span class="mfg-card-label">Quality & Packaging</span>
+              <h3 class="font-display">Quality Check & Sealing</h3>
+              <p>
+                Every batch is carefully checked and securely sealed to preserve freshness, aroma and authentic taste.
+              </p>
+            </div>
+          </div>
+
+          <div class="mfg-video-card">
+            <div class="mfg-video-wrapper">
+              <video controls playsinline preload="metadata" class="mfg-video-player">
+                <source src="videos/4.mp4" type="video/mp4">
+              </video>
+              <div class="video-number">04</div>
+            </div>
+            <div class="mfg-card-content">
+              <span class="mfg-card-label">Pure Ghee Craftsmanship</span>
+              <h3 class="font-display">Authentic Farm Kitchen Batch</h3>
+              <p>
+                Watch our authentic A2 Bilona Desi Cow Ghee small batch preparation, traditional aroma and farm-fresh packaging.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer
+    style="background: #030a06; border-top: 2px solid var(--color-green-border); padding: 4rem 0 2rem 0; color: var(--color-cream-muted);">
+    <div class="container-x">
+      <div
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2.5rem; margin-bottom: 3rem;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <img src="image/logo.png?v=2" alt="Brajbhumi Logo"
+              style="height: 48px; width: auto; object-fit: contain;" />
+          </div>
+          <p style="font-size: 0.85rem; color: var(--color-cream-muted); line-height: 1.6; margin-bottom: 1.25rem;">
+            100% Pure A2 Desi Cow Ghee, hand-churned using traditional bilona churners. NABL lab certified, 0%
+            preservatives, farm-fresh quality.
+          </p>
+        </div>
+
+        <div>
+          <h4
+            style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-gold); letter-spacing: 0.15em; margin-bottom: 1rem;">
+            Products</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem;">
+            <li><a href="products.html" style="color: var(--color-cream-muted); text-decoration: none;">500g Signature Glass Jar (₹980)</a></li>
+            <li><a href="products.html" style="color: var(--color-cream-muted); text-decoration: none;">1 Liter Glass Jar Pack (₹1,950)</a></li>
+            <li><a href="products.html" style="color: var(--color-cream-muted); text-decoration: none;">5 Liter Steel Dolchi Container (₹8,900)</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4
+            style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-gold); letter-spacing: 0.15em; margin-bottom: 1rem;">
+            Company</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem;">
+            <li><a href="about.html" style="color: var(--color-cream-muted); text-decoration: none;">About Us</a></li>
+            <li><a href="why.html" style="color: var(--color-cream-muted); text-decoration: none;">Why Brajbhumi</a></li>
+            <li><a href="manufacturing.html" style="color: var(--color-cream-muted); text-decoration: none;">Bilona Process</a></li>
+            <li><a href="testimonials.html" style="color: var(--color-cream-muted); text-decoration: none;">Customer Reviews</a></li>
+            <li><a href="contact.html" style="color: var(--color-cream-muted); text-decoration: none;">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4
+            style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-gold); letter-spacing: 0.15em; margin-bottom: 1rem;">
+            Connect With Us</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem;">
+            <li><a href="mailto:brajbhumi01@gmail.com"
+                style="color: var(--color-cream-muted); text-decoration: none;">brajbhumi01@gmail.com</a></li>
+            <li><a href="https://www.instagram.com/reel/Db8kMJYzEVj/?igsh=MWNkcnoxaXYwazk5NA==" target="_blank"
+                rel="noreferrer" style="color: var(--color-cream-muted); text-decoration: none;">Instagram Page</a></li>
+            <li><a href="https://www.facebook.com/share/p/19TwKjG8up/" target="_blank" rel="noreferrer"
+                style="color: var(--color-cream-muted); text-decoration: none;">Facebook Page</a></li>
+            <li><a href="https://wa.me/916397180939" target="_blank" rel="noreferrer"
+                style="color: var(--color-cream-muted); text-decoration: none;">WhatsApp (+91 63971 80939)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        style="border-top: 1px solid rgba(188,148,76,0.15); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.8rem;">
+        <span>© 2026 Brajbhumi Food · <a href="https://edoply.in" target="_blank" rel="noreferrer" style="color: var(--color-gold); text-decoration: none; font-weight: 600;">edoply.in</a>. All rights reserved.</span>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#" style="color: var(--color-cream-muted); text-decoration: none;">Privacy Policy</a>
+          <a href="#" style="color: var(--color-cream-muted); text-decoration: none;">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shopping Cart Slide-over Drawer -->
+  <div id="cart-overlay" class="cart-drawer-overlay">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <h3 class="font-display" style="font-size: 1.25rem; color: var(--color-cream);">Your Cart</h3>
+        <button onclick="toggleCart()"
+          style="background: none; border: none; color: var(--color-cream); font-size: 1.5rem; cursor: pointer;">✕</button>
+      </div>
+
+      <div id="cart-items-container" class="cart-body"></div>
+
+      <div class="cart-footer">
+        <div id="cart-coupon-section"
+          style="border-bottom: 1px solid var(--color-green-border); padding-bottom: 0.75rem; margin-bottom: 0.75rem;"></div>
+
+        <div id="cart-summary-section" style="margin-bottom: 1rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+            <span style="font-size: 0.85rem; color: var(--color-cream-muted);">Subtotal:</span>
+            <span id="cart-subtotal" style="font-size: 1rem; font-weight: 600; color: var(--color-cream);">₹0</span>
+          </div>
+          <div id="cart-discount-row"
+            style="display: none; justify-content: space-between; align-items: center; margin-bottom: 0.35rem; color: #4ade80;">
+            <span style="font-size: 0.85rem;">Coupon Discount:</span>
+            <span id="cart-discount-val" style="font-size: 1rem; font-weight: 600;">-₹0</span>
+          </div>
+          <div
+            style="display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed rgba(188,148,76,0.3); padding-top: 0.5rem; margin-top: 0.5rem;">
+            <span style="font-family: var(--font-heading); color: var(--color-cream); font-weight: 700;">Total Payable:</span>
+            <span id="cart-final-total"
+              style="font-size: 1.35rem; font-weight: 700; color: var(--color-gold-light);">₹0</span>
+          </div>
+        </div>
+
+        <button onclick="checkoutWhatsApp()" class="btn-gold" style="width: 100%; padding: 0.85rem; font-size: 0.95rem;">
+          Checkout on WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Script -->
+  <script src="app.js"></script>
+</body>
+
+</html>

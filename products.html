@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pure Desi Cow Ghee Products · Brajbhumi 100% A2 Bilona Ghee</title>
+  <meta name="description"
+    content="Browse Brajbhumi Pure A2 Desi Cow Ghee products. Available in 500g glass jar, 1 Liter value pack, and 5 Liter traditional steel dolchi container with instant festival discount coupons." />
+  <meta name="keywords" content="brajbhumi ghee products, buy A2 cow ghee, 1L cow ghee jar, 5L steel dolchi ghee, bilona ghee online" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Pure Desi Cow Ghee Products · Brajbhumi" />
+  <meta property="og:description"
+    content="100% pure hand-churned A2 Desi Cow Ghee. NABL lab tested, 0% preservatives. Free express delivery across India." />
+  <meta property="og:type" content="website" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- Ambient Background Glow Effects -->
+  <div class="bg-glow-top"></div>
+  <div class="bg-glow-bottom"></div>
+
+  <!-- Sticky Header Navigation -->
+  <header class="sticky-header">
+    <div class="container-x"
+      style="display: flex; align-items: center; justify-content: space-between; padding-top: 0.75rem; padding-bottom: 0.75rem;">
+      <a href="index.html" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none;">
+        <img src="image/logo.png?v=2" alt="Brajbhumi Logo"
+          style="height: 52px; width: auto; object-fit: contain; filter: drop-shadow(0 2px 10px rgba(188,148,76,0.35));" />
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="nav-links hidden-mobile">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="products.html" class="nav-link active">Ghee Products</a>
+        <a href="why.html" class="nav-link">Why Brajbhumi</a>
+        <a href="manufacturing.html" class="nav-link">Bilona Process</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+      </nav>
+
+      <!-- Header CTAs & Cart Icon -->
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <a href="https://wa.me/916397180939?text=Hi%20Brajbhumi%2C%20I&#x27;d%20like%20to%20order%20ghee"
+          target="_blank" rel="noreferrer" class="btn-gold hidden-mobile"
+          style="padding: 0.5rem 1.25rem; font-size: 0.8rem;">
+          <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor;">
+            <path
+              d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-0.999 3.648 3.742-.981z" />
+          </svg>
+          Order on WhatsApp
+        </a>
+
+        <!-- Cart Button Drawer Trigger -->
+        <button onclick="toggleCart()" aria-label="Open Cart Drawer"
+          style="position: relative; background: rgba(188,148,76,0.12); border: 1px solid var(--color-green-border); width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--color-gold); transition: var(--transition-smooth);">
+          <svg viewBox="0 0 24 24"
+            style="width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;">
+            <path
+              d="M3 3h2l.4 2M7 13h10l3.6-8H5.4M7 13L5.4 5M7 13l-2.3 4.6A1 1 0 005.6 19H17M9 21a1 1 0 100-2 1 1 0 000 2zm8 0a1 1 0 100-2 1 1 0 000 2z">
+            </path>
+          </svg>
+          <span id="cart-badge"
+            style="position: absolute; top: -4px; right: -4px; background: var(--color-gold); color: #07160d; font-size: 0.7rem; font-weight: 700; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">0</span>
+        </button>
+
+        <!-- Mobile Hamburger Menu Button -->
+        <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="mobile-toggle-btn"
+          aria-label="Toggle Navigation Menu">
+          <svg viewBox="0 0 24 24"
+            style="width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round;">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="mobile-menu-drawer">
+      <a href="index.html" onclick="toggleMobileMenu()" class="mobile-nav-link">Home</a>
+      <a href="products.html" onclick="toggleMobileMenu()" class="mobile-nav-link active">Ghee Products</a>
+      <a href="why.html" onclick="toggleMobileMenu()" class="mobile-nav-link">Why Brajbhumi</a>
+      <a href="manufacturing.html" onclick="toggleMobileMenu()" class="mobile-nav-link">Bilona Process</a>
+      <a href="about.html" onclick="toggleMobileMenu()" class="mobile-nav-link">About Us</a>
+      <a href="contact.html" onclick="toggleMobileMenu()" class="mobile-nav-link">Contact Us</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Hero Banner -->
+    <div class="page-hero-banner">
+      <div class="container-x">
+        <span class="eyebrow">100% Traditional Bilona Method</span>
+        <h1 class="page-hero-title">Pure A2 Desi Cow <span class="text-shimmer">Ghee Range</span></h1>
+        <p class="page-hero-desc">
+          Hand-churned from fresh A2 cow butter in small batches. Granular texture, rich traditional aroma, and 100% lab certified purity.
+        </p>
+        <div class="breadcrumb-nav">
+          <a href="index.html">Home</a>
+          <span>›</span>
+          <span>Ghee Products</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Catalog Section -->
+    <section id="products" style="padding: 4rem 0 5rem 0;">
+      <div class="container-x">
+        
+        <!-- Special Festival Discount Banner -->
+        <div class="coupon-banner-section">
+          <div class="coupon-banner-card">
+            <div class="coupon-banner-header"
+              style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid rgba(188,148,76,0.25); padding-bottom: 1rem;">
+              <div class="coupon-banner-header-left" style="display: flex; align-items: center; gap: 0.75rem;">
+                <div
+                  style="background: var(--color-gold); color: #07160d; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.35rem; font-weight: 700; box-shadow: 0 4px 12px rgba(188,148,76,0.4); flex-shrink: 0;">
+                  <svg viewBox="0 0 24 24" style="width: 22px; height: 22px; fill: #07160d;"><path d="M20 6h-3.17L18.4 3.2a1 1 0 0 0-1.6-1.2L14.4 5H9.6L7.2 2a1 1 0 0 0-1.6 1.2L7.17 6H4a2 2 0 0 0-2 2v3a1 1 0 0 0 1 1h1v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8h1a1 1 0 0 0 1-1V8a2 2 0 0 0-2-2zm-9-2h2v2h-2V4zm-6 4h14v2H5V8zm2 4h4v8H7v-8zm10 8h-4v-8h4v8z"/></svg>
+                </div>
+                <div>
+                  <h3 class="font-display" style="font-size: 1.35rem; color: var(--color-cream); margin-bottom: 0.2rem;">
+                    Rakhi Special <span class="text-shimmer">Ghee Offers</span>
+                  </h3>
+                  <p style="font-size: 0.85rem; color: var(--color-cream-muted); margin-top: 0.15rem; line-height: 1.4;">
+                    Instant festival discount automatically applied in your cart on 1L & 5L packs!
+                  </p>
+                </div>
+              </div>
+              <span class="eyebrow"
+                style="background: rgba(188,148,76,0.15); padding: 0.35rem 0.85rem; border-radius: 20px; border: 1px solid var(--color-gold); display: inline-block;">
+                Special Offer
+              </span>
+            </div>
+
+            <div class="coupon-banner-grid">
+              <!-- Offer 1: 1kg Ghee -->
+              <div class="coupon-offer-item">
+                <div style="display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: rgba(188,148,76,0.15); flex-shrink: 0;">
+                  <svg viewBox="0 0 24 24" style="width: 22px; height: 22px; fill: var(--color-gold);"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/></svg>
+                </div>
+                <div class="coupon-offer-item-text" style="flex: 1;">
+                  <span
+                    style="font-size: 0.725rem; text-transform: uppercase; color: var(--color-gold); letter-spacing: 0.08em; font-weight: 700;">Buy 1 Liter Ghee Pack</span>
+                  <div
+                    style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-cream); font-weight: 700; margin-top: 0.15rem;">
+                    Get <span style="color: #4ade80;">₹100 Instant OFF</span>
+                  </div>
+                  <div style="font-size: 0.75rem; color: var(--color-cream-muted); margin-top: 0.2rem;">
+                    Discount Code: <code
+                      style="color: var(--color-gold-light); background: rgba(0,0,0,0.5); padding: 1px 5px; border-radius: 4px; font-weight: 700;">GHEE100</code>
+                  </div>
+                </div>
+                <button onclick="addToCartDirect('cow-ghee-1kg')" class="btn-gold"
+                  style="padding: 0.5rem 1rem; font-size: 0.78rem; white-space: nowrap;">
+                  Buy 1L & Save ₹100
+                </button>
+              </div>
+
+              <!-- Offer 2: 5kg Ghee -->
+              <div class="coupon-offer-item">
+                <div style="display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: rgba(188,148,76,0.15); flex-shrink: 0;">
+                  <svg viewBox="0 0 24 24" style="width: 22px; height: 22px; fill: var(--color-gold);"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg>
+                </div>
+                <div class="coupon-offer-item-text" style="flex: 1;">
+                  <span
+                    style="font-size: 0.725rem; text-transform: uppercase; color: var(--color-gold); letter-spacing: 0.08em; font-weight: 700;">Buy 5 Liter Steel Container</span>
+                  <div
+                    style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-cream); font-weight: 700; margin-top: 0.15rem;">
+                    Get <span style="color: #4ade80;">₹300 Instant OFF</span>
+                  </div>
+                  <div style="font-size: 0.75rem; color: var(--color-cream-muted); margin-top: 0.2rem;">
+                    Discount Code: <code
+                      style="color: var(--color-gold-light); background: rgba(0,0,0,0.5); padding: 1px 5px; border-radius: 4px; font-weight: 700;">GHEE300</code>
+                  </div>
+                </div>
+                <button onclick="addToCartDirect('cow-ghee-5kg-tin')" class="btn-gold"
+                  style="padding: 0.5rem 1rem; font-size: 0.78rem; white-space: nowrap;">
+                  Buy 5L & Save ₹300
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic Product Cards Grid -->
+        <div id="products-grid"
+          style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.75rem;">
+          <!-- JavaScript populates product cards here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Showcase Jar Section -->
+    <section id="showcase" class="showcase-bg">
+      <div class="showcase-glow"></div>
+      <div class="container-x" style="position: relative; z-index: 2;">
+        <div style="text-align: center; margin-bottom: 2.5rem;">
+          <div
+            style="display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+            <span class="gold-line"></span>
+            <span class="eyebrow">The Signature Jar</span>
+            <span class="gold-line" style="transform: rotate(180deg);"></span>
+          </div>
+          <h2 class="font-display" style="font-size: 2.5rem; color: var(--color-cream);">
+            Crafted for <span class="text-shimmer">Purity</span>
+          </h2>
+        </div>
+
+        <div class="showcase-grid">
+          <!-- Left Indicators -->
+          <div class="showcase-col-left">
+            <div>
+              <span style="font-size: 0.75rem; letter-spacing: 0.2em; color: var(--color-gold);">01</span>
+              <h3 class="font-display" style="font-size: 1.15rem; color: var(--color-cream); margin-top: 0.25rem;">
+                Natural Granular Texture</h3>
+              <p style="font-size: 0.85rem; color: var(--color-cream-muted); margin-top: 0.35rem;">
+                A mark of genuine purity — pure A2 ghee naturally granulates upon cooling.
+              </p>
+            </div>
+            <div>
+              <span style="font-size: 0.75rem; letter-spacing: 0.2em; color: var(--color-gold);">02</span>
+              <h3 class="font-display" style="font-size: 1.15rem; color: var(--color-cream); margin-top: 0.25rem;">
+                Sealed For Freshness</h3>
+              <p style="font-size: 0.85rem; color: var(--color-cream-muted); margin-top: 0.35rem;">
+                Golden airtight lid seals aroma and prevents exposure to ambient air.
+              </p>
+            </div>
+          </div>
+
+          <!-- Middle Jar Image -->
+          <div class="showcase-jar-wrapper">
+            <img src="image/ghee.jpg?v=2" alt="Signature Ghee Jar" class="showcase-jar-img" />
+          </div>
+
+          <!-- Right Indicators -->
+          <div class="showcase-col-right">
+            <div>
+              <span style="font-size: 0.75rem; letter-spacing: 0.2em; color: var(--color-gold);">03</span>
+              <h3 class="font-display" style="font-size: 1.15rem; color: var(--color-cream); margin-top: 0.25rem;">Small
+                Batch Churning</h3>
+              <p style="font-size: 0.85rem; color: var(--color-cream-muted); margin-top: 0.35rem;">
+                Crafted in small batches using traditional wooden bilona churners.
+              </p>
+            </div>
+            <div>
+              <span style="font-size: 0.75rem; letter-spacing: 0.2em; color: var(--color-gold);">04</span>
+              <h3 class="font-display" style="font-size: 1.15rem; color: var(--color-cream); margin-top: 0.25rem;">Pour
+                Easy & Store</h3>
+              <p style="font-size: 0.85rem; color: var(--color-cream-muted); margin-top: 0.35rem;">
+                Wide neck glass jar designed for daily kitchen spooning and effortless storage.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <a href="https://wa.me/916397180939?text=Hi%20Brajbhumi%2C%20I&#x27;d%20like%20to%20order%20Signature%20Ghee%20Jar"
+            target="_blank" rel="noreferrer" class="btn-gold">
+            Order Signature Jar on WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Ghee Usage Calculator -->
+    <section style="padding: 5rem 0; background: rgba(4,13,8,0.7);">
+      <div class="container-x">
+        <div class="calc-box">
+          <div style="text-align: center; margin-bottom: 1.75rem;">
+            <span class="eyebrow" style="font-size: 0.7rem;">Smart Recommendation</span>
+            <h3 class="font-display" style="font-size: 1.65rem; color: var(--color-cream); margin-top: 0.25rem;">
+              Calculate Your Family's <span class="text-shimmer">Ideal Ghee Pack</span>
+            </h3>
+            <p style="font-size: 0.85rem; color: var(--color-cream-muted); margin-top: 0.35rem;">
+              Select your family size to see recommended monthly pack & savings.
+            </p>
+          </div>
+          
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; margin-bottom: 1.75rem;">
+            <button onclick="calculateGheePack('small')" id="calc-btn-small" class="calc-option-btn active">1-2 Persons
+              (Couples)</button>
+            <button onclick="calculateGheePack('medium')" id="calc-btn-medium" class="calc-option-btn">3-4 Persons
+              (Medium Family)</button>
+            <button onclick="calculateGheePack('large')" id="calc-btn-large" class="calc-option-btn">5+ Persons (Joint /
+              Bulk)</button>
+          </div>
+
+          <div id="calc-result"
+            style="background: rgba(4,13,8,0.7); border: 1px dashed var(--color-gold); border-radius: 1rem; padding: 1.5rem; text-align: center;">
+            <span
+              style="font-size: 0.75rem; text-transform: uppercase; color: var(--color-gold); letter-spacing: 0.15em;">Recommended
+              Pack</span>
+            <h4 id="calc-pack-title" class="font-display"
+              style="font-size: 1.35rem; color: var(--color-cream); margin: 0.35rem 0;">500g Signature Glass Jar (₹980)
+            </h4>
+            <p id="calc-pack-desc"
+              style="font-size: 0.85rem; color: var(--color-cream-muted); max-width: 480px; margin: 0 auto 1rem auto;">
+              Ideal for daily spooning, morning warm water / milk ritual, and rotis for 1-2 people.</p>
+            <button id="calc-action-btn" onclick="openProductModal('cow-ghee-pure')" class="btn-gold"
+              style="padding: 0.5rem 1.25rem; font-size: 0.8rem;">Order Recommended Pack</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer
+    style="background: #030a06; border-top: 2px solid var(--color-green-border); padding: 4rem 0 2rem 0; color: var(--color-cream-muted);">
+    <div class="container-x">
+      <div
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2.5rem; margin-bottom: 3rem;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <img src="image/logo.png?v=2" alt="Brajbhumi Logo"
+              style="height: 48px; width: auto; object-fit: contain;" />
+          </div>
+          <p style="font-size: 0.85rem; color: var(--color-cream-muted); line-height: 1.6; margin-bottom: 1.25rem;">
+            100% Pure A2 Desi Cow Ghee, hand-churned using traditional bilona churners. NABL lab certified, 0%
+            preservatives, farm-fresh quality.
+          </p>
+        </div>
+
+        <div>
+          <h4
+            style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-gold); letter-spacing: 0.15em; margin-bottom: 1rem;">
+            Products</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem;">
+            <li><a href="products.html" style="color: var(--color-cream-muted); text-decoration: none;">500g Signature Glass Jar (₹980)</a></li>
+            <li><a href="products.html" style="color: var(--color-cream-muted); text-decoration: none;">1 Liter Glass Jar Pack (₹1,950)</a></li>
+            <li><a href="products.html" style="color: var(--color-cream-muted); text-decoration: none;">5 Liter Steel Dolchi Container (₹8,900)</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4
+            style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-gold); letter-spacing: 0.15em; margin-bottom: 1rem;">
+            Company</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem;">
+            <li><a href="about.html" style="color: var(--color-cream-muted); text-decoration: none;">About Us</a></li>
+            <li><a href="why.html" style="color: var(--color-cream-muted); text-decoration: none;">Why Brajbhumi</a></li>
+            <li><a href="manufacturing.html" style="color: var(--color-cream-muted); text-decoration: none;">Bilona Process</a></li>
+            <li><a href="testimonials.html" style="color: var(--color-cream-muted); text-decoration: none;">Customer Reviews</a></li>
+            <li><a href="contact.html" style="color: var(--color-cream-muted); text-decoration: none;">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4
+            style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-gold); letter-spacing: 0.15em; margin-bottom: 1rem;">
+            Connect With Us</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem;">
+            <li><a href="mailto:brajbhumi01@gmail.com"
+                style="color: var(--color-cream-muted); text-decoration: none;">brajbhumi01@gmail.com</a></li>
+            <li><a href="https://www.instagram.com/reel/Db8kMJYzEVj/?igsh=MWNkcnoxaXYwazk5NA==" target="_blank"
+                rel="noreferrer" style="color: var(--color-cream-muted); text-decoration: none;">Instagram Page</a></li>
+            <li><a href="https://www.facebook.com/share/p/19TwKjG8up/" target="_blank" rel="noreferrer"
+                style="color: var(--color-cream-muted); text-decoration: none;">Facebook Page</a></li>
+            <li><a href="https://wa.me/916397180939" target="_blank" rel="noreferrer"
+                style="color: var(--color-cream-muted); text-decoration: none;">WhatsApp (+91 63971 80939)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        style="border-top: 1px solid rgba(188,148,76,0.15); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.8rem;">
+        <span>© 2026 Brajbhumi Food · <a href="https://edoply.in" target="_blank" rel="noreferrer" style="color: var(--color-gold); text-decoration: none; font-weight: 600;">edoply.in</a>. All rights reserved.</span>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#" style="color: var(--color-cream-muted); text-decoration: none;">Privacy Policy</a>
+          <a href="#" style="color: var(--color-cream-muted); text-decoration: none;">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shopping Cart Slide-over Drawer -->
+  <div id="cart-overlay" class="cart-drawer-overlay">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <h3 class="font-display" style="font-size: 1.25rem; color: var(--color-cream);">Your Cart</h3>
+        <button onclick="toggleCart()"
+          style="background: none; border: none; color: var(--color-cream); font-size: 1.5rem; cursor: pointer;">✕</button>
+      </div>
+
+      <div id="cart-items-container" class="cart-body"></div>
+
+      <div class="cart-footer">
+        <div id="cart-coupon-section"
+          style="border-bottom: 1px solid var(--color-green-border); padding-bottom: 0.75rem; margin-bottom: 0.75rem;">
+        </div>
+
+        <div id="cart-summary-section" style="margin-bottom: 1rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+            <span style="font-size: 0.85rem; color: var(--color-cream-muted);">Subtotal:</span>
+            <span id="cart-subtotal" style="font-size: 1rem; font-weight: 600; color: var(--color-cream);">₹0</span>
+          </div>
+          <div id="cart-discount-row"
+            style="display: none; justify-content: space-between; align-items: center; margin-bottom: 0.35rem; color: #4ade80;">
+            <span style="font-size: 0.85rem;">Coupon Discount:</span>
+            <span id="cart-discount-val" style="font-size: 1rem; font-weight: 600;">-₹0</span>
+          </div>
+          <div
+            style="display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed rgba(188,148,76,0.3); padding-top: 0.5rem; margin-top: 0.5rem;">
+            <span style="font-family: var(--font-heading); color: var(--color-cream); font-weight: 700;">Total
+              Payable:</span>
+            <span id="cart-final-total"
+              style="font-size: 1.35rem; font-weight: 700; color: var(--color-gold-light);">₹0</span>
+          </div>
+        </div>
+
+        <button onclick="checkoutWhatsApp()" class="btn-gold"
+          style="width: 100%; padding: 0.85rem; font-size: 0.95rem;">
+          Checkout on WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Quick View Modal -->
+  <div id="modal-overlay" class="modal-overlay">
+    <div class="modal-content">
+      <button onclick="closeModal()"
+        style="position: absolute; top: 1rem; right: 1rem; background: rgba(255,255,255,0.08); border: none; width: 36px; height: 36px; border-radius: 50%; color: var(--color-cream); font-size: 1.2rem; cursor: pointer;">✕</button>
+
+      <div
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; align-items: center;">
+        <div style="text-align: center; position: relative;">
+          <img id="modal-img" src="" alt="Product Detail"
+            style="max-height: 260px; max-width: 100%; object-fit: contain; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.6));" />
+        </div>
+
+        <div>
+          <span id="modal-badge" class="product-badge"
+            style="position: relative; top: auto; left: auto; display: inline-block; margin-bottom: 0.75rem;"></span>
+          <h3 id="modal-title" class="font-display"
+            style="font-size: 1.65rem; color: var(--color-cream); margin-bottom: 0.5rem;"></h3>
+          <p id="modal-desc"
+            style="font-size: 0.9rem; color: var(--color-cream-muted); margin-bottom: 1.25rem; line-height: 1.6;"></p>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label
+              style="display: block; font-size: 0.8rem; text-transform: uppercase; color: var(--color-gold); letter-spacing: 0.15em; margin-bottom: 0.5rem;">Select
+              Bottle / Jar Size:</label>
+            <div id="modal-sizes-container" style="display: flex; gap: 0.5rem; flex-wrap: wrap;"></div>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label
+              style="display: block; font-size: 0.8rem; text-transform: uppercase; color: var(--color-gold); letter-spacing: 0.15em; margin-bottom: 0.5rem;">Key
+              Highlights:</label>
+            <ul id="modal-features"
+              style="list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;"></ul>
+          </div>
+
+          <div
+            style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--color-green-border); padding-top: 1.25rem;">
+            <div>
+              <span
+                style="font-size: 0.75rem; text-transform: uppercase; color: var(--color-gold); display: block;">Price</span>
+              <span id="modal-price"
+                style="font-size: 1.5rem; font-weight: 700; color: var(--color-gold-light);"></span>
+            </div>
+            <div style="display: flex; gap: 0.75rem;">
+              <button onclick="addModalItemToCart()" class="btn-gold"
+                style="padding: 0.65rem 1.5rem; font-size: 0.85rem;">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Script -->
+  <script src="app.js"></script>
+</body>
+
+</html>
