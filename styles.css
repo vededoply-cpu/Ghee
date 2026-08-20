@@ -3200,3 +3200,52 @@ header.sticky-header.scrolled {
   align-items: center;
   gap: 0.6rem;
 }
+
+/* ==========================================================================
+   COUPON BANNER MOBILE RESPONSIVENESS
+   ========================================================================== */
+
+@media (max-width: 640px) {
+  .coupon-banner-card {
+    padding: 1.25rem 1rem !important;
+    border-radius: 1rem !important;
+  }
+
+  .coupon-banner-header {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 0.75rem !important;
+  }
+
+  .coupon-banner-header-left {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .coupon-banner-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .coupon-offer-item {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 1.25rem 1rem !important;
+    gap: 0.75rem !important;
+  }
+
+  .coupon-offer-item-text {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .coupon-offer-item button {
+    width: 100% !important;
+    margin-top: 0.25rem !important;
+    padding: 0.65rem 1rem !important;
+    font-size: 0.825rem !important;
+  }
+}
