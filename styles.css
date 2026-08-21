@@ -3642,3 +3642,36 @@ header.sticky-header.scrolled {
   transform: scale(1.05);
   box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
 }
+
+/* ==========================================================================
+   PROMO BRAND BANNER (IMAGE/6.PNG)
+   ========================================================================== */
+
+.promo-banner-section {
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.promo-banner-card {
+  position: relative;
+  border-radius: 1.75rem;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 35px rgba(212, 175, 55, 0.15);
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+  background: #06180d;
+}
+
+.promo-banner-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(212, 175, 55, 0.7);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.75), 0 0 50px rgba(212, 175, 55, 0.25);
+}
+
+.promo-banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
