@@ -1458,27 +1458,28 @@ function showToastNotification(message) {
   }, 4000);
 }
 
-function toggleAudio(vidId, btn) {
-  const vid = document.getElementById(vidId);
-  if (!vid) return;
+// Auto-Unmute & Voiceover Sound Manager for Process Videos
+document.addEventListener('DOMContentLoaded', () => {
+  const mfgVideos = document.querySelectorAll('.mfg-video-player');
 
-  if (vid.muted) {
-    // Unmute other videos first so only one voiceover plays at a time
-    document.querySelectorAll('.mfg-video-player').forEach(v => {
-      if (v !== vid) {
-        v.muted = true;
-      }
-    });
-    document.querySelectorAll('.unmute-overlay-btn').forEach(b => {
-      b.innerHTML = '🔊 Listen Voice';
+  mfgVideos.forEach((video) => {
+    // When video starts playing, ensure sound is UNMUTED with full volume
+    video.addEventListener('play', () => {
+      video.muted = false;
+      video.volume = 1.0;
+
+      // Pause other process videos so voices do not overlap
+      mfgVideos.forEach((otherVid) => {
+        if (otherVid !== video && !otherVid.paused) {
+          otherVid.pause();
+        }
+      });
     });
 
-    vid.muted = false;
-    vid.volume = 1.0;
-    vid.play();
-    if (btn) btn.innerHTML = '🔇 Mute Audio';
-  } else {
-    vid.muted = true;
-    if (btn) btn.innerHTML = '🔊 Listen Voice';
-  }
-}
+    // Ensure clicking video unmutes sound
+    video.addEventListener('click', () => {
+      video.muted = false;
+      video.volume = 1.0;
+    });
+  });
+});
