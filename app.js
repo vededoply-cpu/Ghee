@@ -1457,3 +1457,28 @@ function showToastNotification(message) {
     toast.classList.remove('show');
   }, 4000);
 }
+
+function toggleAudio(vidId, btn) {
+  const vid = document.getElementById(vidId);
+  if (!vid) return;
+
+  if (vid.muted) {
+    // Unmute other videos first so only one voiceover plays at a time
+    document.querySelectorAll('.mfg-video-player').forEach(v => {
+      if (v !== vid) {
+        v.muted = true;
+      }
+    });
+    document.querySelectorAll('.unmute-overlay-btn').forEach(b => {
+      b.innerHTML = '🔊 Listen Voice';
+    });
+
+    vid.muted = false;
+    vid.volume = 1.0;
+    vid.play();
+    if (btn) btn.innerHTML = '🔇 Mute Audio';
+  } else {
+    vid.muted = true;
+    if (btn) btn.innerHTML = '🔊 Listen Voice';
+  }
+}
